@@ -1,0 +1,42 @@
+{
+  "Person": [],
+  "Organization": [],
+  "Science": [
+    {
+      "text": "лингвистика"
+    },
+    {
+      "text": "математики"
+    },
+    {
+      "text": "информатики"
+    },
+    {
+      "text": "искусственного интеллекта"
+    },
+    {
+      "text": "психолингвистика"
+    },
+    {
+      "text": "компьютерная лингвистика"
+    }
+  ],
+  "Method": [
+    {
+      "text": "Natural Language Generation"
+    },
+    {
+      "text": "Natural Language Understanding"
+    },
+    {
+      "text": "NLP"
+    },
+    {
+      "text": "NLU"
+    },
+    {
+      "text": "NLG"
+    }
+  ],
+  "Date": []
+}
