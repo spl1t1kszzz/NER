@@ -1,4 +1,5 @@
 import json
+import os
 
 
 def read_json_file(file_name: str):
@@ -50,11 +51,20 @@ def get_predicted_entities(dataset_num: int, res_num: int):
     return pred_ent
 
 
-dataset_number = 4
-res_number = 4
+def print_metrics_for_dataset(dataset_num: int):
 
-true_entities = get_true_entities(dataset_number)
-predicted_entities = get_predicted_entities(dataset_number, res_number)
+    cur_dir = f'./dataset_{dataset_num}/'
+    res_files = [f for f in os.listdir(cur_dir) if os.path.isfile(os.path.join(cur_dir, f)) and f.startswith('res')]
+    tricks = read_json_file(f'./dataset_{dataset_num}/tricks.json')
+    for res_file in res_files:
+        print('---------------------------------------------------')
+        res_num = os.path.splitext(res_file)[0][-1]
+        print(tricks[res_num])
+        true_entities = get_true_entities(dataset_num)
+        predicted_entities = get_predicted_entities(dataset_num, res_num)
+        met = calculate_metrics(true_entities, predicted_entities)
+        print_metrics(met)
+        print('---------------------------------------------------')
 
-met = calculate_metrics(true_entities, predicted_entities)
-print_metrics(met)
+
+print_metrics_for_dataset(4)
