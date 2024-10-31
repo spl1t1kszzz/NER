@@ -1,70 +1,60 @@
-import time
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
+import json
 
-MODEL_NAME = "IlyaGusev/saiga_llama3_8b"
-DEFAULT_SYSTEM_PROMPT = "Ты эксперт в сфере задачи NER (Named Entity Recognition)"
 
-# Загрузка модели с использованием FP16
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_NAME,
-    load_in_4bit=True,
-    torch_dtype=torch.float32,
-    device_map="auto"
-)
-model.eval()
+def read_json_file(file_name: str):
+    with open(file_name, 'r', encoding='utf-8') as json_file:
+        json_data = json.load(json_file)
+        return json_data
 
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-generation_config = GenerationConfig.from_pretrained(MODEL_NAME)
-generation_config.num_beams = 1
-generation_config.do_sample = True
-generation_config.temperature = 0.7
 
-print(generation_config)
+def calculate_metrics(true_ent, predicted_ent):
+    metrics = {}
+    for category in true_ent.keys():
+        true_labels = [item['text'] for item in true_ent[category]]
+        predicted_labels = [item['text'] for item in predicted_ent[category]]
 
-# inputs = ["Напиши числа от 1 до 10"]
+        true_set = set(true_labels)
+        predicted_set = set(predicted_labels)
 
-inputs = ['''Выдели в следующем тексте всех персонажей, все организации, все страны, все даты в JSON формате, попробуй думать шаг за шагом:
-Черногория к началу Второй мировой войны не имела собственной государственности и входила в состав Королевства Югославия. По итогам раздела Югославии державами «оси» Италия аннексировала основную часть Черногорского Приморья
-— Боку Которскую, а на остальной территории, включая Санджак, установила с конца апреля 1941 года оккупационное управление.
+        tp = len(true_set.intersection(predicted_set))  # Верные предсказания
+        fp = len(predicted_set - true_set)  # Ложные срабатывания
+        fn = len(true_set - predicted_set)  # Пропущенные метки
 
-Первоначально итальянские власти планировали создать марионеточное черногорское королевство, тесно связанное с Королевством Италия личной унией.
-Для этого 12 июля 1941 года собранный при покровительстве Италии так называемый Петровданский сабор принял подготовленную в Риме декларацию о восстановлении независимости Черногории и обращение к итальянскому королю с ходатайством о назначении регента.
- Однако итальянский план был навсегда отложен после начавшегося 13 июля народного восстания в Черногории, возглавленного краевым комитетом КПЮ. В августе 1941 года превосходящие силы итальянских войск 9-й армии подавили восстание и установили контроль над большей частью Черногории.
-3 октября 1941 года Бенито Муссолини учредил губернаторство Черногория в качестве военно-оккупационной административной единицы. Подавление восстания не привело к ликвидации движения Сопротивления в Черногории. Оставшиеся повстанческие силы разделились на два враждебных движения:
- народно-освободительное под руководством КПЮ и четническое равногорское, формально возглавляемое Драголюбом (Дражей) Михайловичем. Оба движения преследовали цель воссоздания Югославии, однако КПЮ боролась за освобождение страны и завоевание власти с целью социально-политического
-  переустройства по советскому образцу, а четники выступали под антикоммунистическими лозунгами за восстановление монархии.
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0
 
-''']
-for query in inputs:
-    prompt = tokenizer.apply_chat_template([{
-        "role": "system",
-        "content": DEFAULT_SYSTEM_PROMPT
-    }, {
-        "role": "user",
-        "content": query
-    }], tokenize=False, add_generation_prompt=True)
+        metrics[category] = {
+            'Precision': precision,
+            'Recall': recall,
+            'F1 Score': f1
+        }
+    return metrics
 
-    data = tokenizer(prompt, return_tensors="pt", add_special_tokens=False)
-    data = {k: v.to(model.device) for k, v in data.items()}
 
-    # Засекаем время перед генерацией
-    start_time = time.time()
+def print_metrics(metrics):
+    for category, metric_values in metrics.items():
+        print(f"Категория: {category}")
+        for metric_name, value in metric_values.items():
+            print(f"  {metric_name}: {value:.2f}")
+        print()
 
-    output_ids = model.generate(**data, generation_config=generation_config)[0]
 
-    # Засекаем время после генерации
-    end_time = time.time()
+def get_true_entities(dataset_num: int):
+    true_ent = read_json_file(f'./dataset_{dataset_num}/entities.json')
+    return true_ent
 
-    output_ids = output_ids[len(data["input_ids"][0]):]
-    output = tokenizer.decode(output_ids, skip_special_tokens=True).strip()
 
-    print(query)
-    print(output)
+def get_predicted_entities(dataset_num: int, res_num: int):
+    pred_ent = read_json_file(f'./dataset_{dataset_num}/res_{res_num}.json')
+    return pred_ent
 
-    # Вычисляем время ответа
-    elapsed_time = end_time - start_time
-    print(f"Время ответа: {elapsed_time:.4f} секунд")
 
-    print("==============================")
-    print()
+dataset_number = 1
+res_number = 2
+
+true_entities = get_true_entities(dataset_number)
+predicted_entities = get_predicted_entities(dataset_number, res_number)
+
+met = calculate_metrics(true_entities, predicted_entities)
+print_metrics(met)
