@@ -1,0 +1,44 @@
+{
+  "Person": [
+    {
+      "text": "Элон Маск"
+    }
+  ],
+  "Organization": [
+    {
+      "text": "OpenAI"
+    },
+    {
+      "text": "Microsoft"
+    },
+    {
+      "text": "Сбер"
+    },
+    {
+      "text": "DeepMind"
+    },
+    {
+      "text": "Google"
+    },
+    {
+      "text": "YouTube"
+    }
+  ],
+  "Science": [
+    {
+      "text": "машинного обучения"
+    }
+  ],
+  "Method": [
+    {
+      "text": "GPT-3"
+    },
+    {
+      "text": "GPT-2"
+    },
+    {
+      "text": "ML-алгоритмов"
+    }
+  ],
+  "Date": []
+}

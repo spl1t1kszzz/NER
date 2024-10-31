@@ -50,8 +50,8 @@ def get_predicted_entities(dataset_num: int, res_num: int):
     return pred_ent
 
 
-dataset_number = 1
-res_number = 2
+dataset_number = 4
+res_number = 4
 
 true_entities = get_true_entities(dataset_number)
 predicted_entities = get_predicted_entities(dataset_number, res_number)
