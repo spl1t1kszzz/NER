@@ -1,7 +1,0 @@
-{
-  "1": ["temp = 0.0", "system prompt CoT"],
-  "2": ["temp = 1.0", "system prompt CoT"],
-  "3": ["temp = 1.0", "example"],
-  "4": ["temp = 0.0", "example"],
-  "5": ["temp = 0.0", "system prompt CoT", "CoT"]
-}
