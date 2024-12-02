@@ -74,6 +74,6 @@ def calculate_metrics_for_all_classes(dataset_num: int):
     results = compute_precision_recall_wrapper(results)
     return results
 
-res = calculate_metrics_for_class(2, 'Environment')
+res = calculate_metrics_for_all_classes(4)
 for r in res:
     print(r, res[r])
