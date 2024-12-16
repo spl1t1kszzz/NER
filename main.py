@@ -1,79 +1,106 @@
-from collections import defaultdict
-
-import nltk
-from sklearn.metrics import precision_score, recall_score, f1_score
-from ner_eval import Evaluator, collect_named_entities, compute_metrics, compute_precision_recall_wrapper
+from fcntl import FASYNC
 
 
-def extract_entities(tokens, labels):
-    entities = []
-    current_entity = []
-    current_entity_type = None
+def get_prompt_template(prompt_file_name: str) -> str:
+    with open(prompt_file_name, 'r', encoding='utf8') as prompt_file:
+        return prompt_file.read()
 
-    for i, (token, label) in enumerate(zip(tokens, labels)):
-        if label.startswith("B-"):
-            if current_entity:  # если мы уже собирали сущность
-                entities.append((current_entity_type, " ".join(current_entity)))
-                current_entity = []
-            current_entity_type = label[2:]  # Тип сущности
-            current_entity.append(token)
-        elif label.startswith("I-") and current_entity:
-            current_entity.append(token)  # продолжаем собирать сущность
+
+def get_bio_from_response(response_file_name: str) -> list[str]:
+    bio = []
+    with open(response_file_name, 'r', encoding='utf8') as response_file:
+        response = response_file.read()
+        for token_label in response.split('\n'):
+            bio.append(token_label.split()[1])
+    return bio
+
+
+def get_bio_from_dataset(dataset_file_name: str) -> list[str]:
+    bio = []
+    with open(dataset_file_name, 'r', encoding='utf8') as dataset_file:
+        dataset = dataset_file.readlines()
+
+    # Обрабатываем строки для извлечения BIO-разметки
+    for line in dataset:
+        # Пропускаем строки, которые начинаются с "# text" или пустые строки
+        if line.startswith('# text') or not line.strip():
+            continue
+
+        # Разбиваем строку на слово и метку
+        parts = line.strip().split()
+        if len(parts) == 2:
+            word, label = parts
+            bio.append(label)
         else:
-            if current_entity:  # если мы закончили собирать сущность
-                entities.append((current_entity_type, " ".join(current_entity)))
-                current_entity = []
-                current_entity_type = None
+            print(line ,len(parts))
 
-    if current_entity:  # добавляем последнюю сущность, если есть
-        entities.append((current_entity_type, " ".join(current_entity)))
+    return bio
 
-    return entities
+def run(num, gpt: bool):
+    if gpt:
+        prompt_template = get_prompt_template('prompts/term_classification(nodef + CoT).txt')
 
+        with open(f'./new_datasets/dataset_{num}/dataset_{num}.txt', 'r', encoding='utf8') as dataset_:
+            dataset = dataset_.read()
+            sentences = dataset.split('# text = ')
+            for sentence in sentences:
+                if sentence != '':
+                    text = sentence.strip().split('\n')[0]
+                    prompt = prompt_template.replace('{текст пользователя}', text)
+                    # print(text)
+                    from openai import OpenAI
 
-def get_labels(file_name: str):
-    with open(file_name, 'r', encoding='utf-8') as file:
-        content = file.read()
-    sections = content.split('\n\n')
-    labels = []
-    for i, section in enumerate(sections):
-        line = sections[i].split('\n')[0]
-        text = line.replace("# text = ", "").strip()
-        tokens = nltk.word_tokenize(text, language='russian')
-        data = section.split('\n')[1:]
-        section_labels = [element.split()[-1] for element in data]
-        labels.extend(section_labels)
-    return labels
+                    client = OpenAI(
+                        api_key="sk-or-vv-b346be4981c98e325b76eec4189e90682506e01b4ce1b7466cfb01774dacae52",
+                        base_url="https://api.vsegpt.ru/v1",
+                    )
 
+                    messages = []
+                    # messages.append({"role": "system", "content": system_text})
+                    messages.append({"role": "user", "content": prompt})
 
-def calculate_metrics_for_class(dataset_num: int, ent_class: str):
-    true_labels = get_labels(f"new_datasets/dataset_{dataset_num}/dataset_{dataset_num}.txt")
-    pred_labels = get_labels(f"new_datasets/dataset_{dataset_num}/all_classes_without_def.txt")
+                    response_big = client.chat.completions.create(
+                        model="openai/gpt-4",
+                        messages=messages,
+                        temperature=0.0,
+                        n=1,
+                        max_tokens=3000,
+                    )
 
-    true_named_entities_type = defaultdict(list)
-    pred_named_entities_type = defaultdict(list)
-
-    for true in collect_named_entities(true_labels):
-        true_named_entities_type[true.e_type].append(true)
-
-    for pred in collect_named_entities(pred_labels):
-        pred_named_entities_type[pred.e_type].append(pred)
-
-    results, results_agg = compute_metrics(true_named_entities_type[ent_class], pred_named_entities_type[ent_class],
-                              tags=[ent_class])
-    results = compute_precision_recall_wrapper(results)
-    return results
+                    # print("Response BIG:",response_big)
+                    response = response_big.choices[0].message.content
+                    print(response)
+    else:
 
 
-def calculate_metrics_for_all_classes(dataset_num: int):
-    true_labels = get_labels(f"new_datasets/dataset_{dataset_num}/dataset_{dataset_num}.txt")
-    pred_labels = get_labels(f"new_datasets/dataset_{dataset_num}/all_classes_with_def.txt")
+        resp = get_bio_from_response(f'./new_datasets/dataset_{num}/CoT.txt')
+        data = get_bio_from_dataset(f'./new_datasets/dataset_{num}/dataset_{num}.txt')
 
-    results, results_agg = compute_metrics(collect_named_entities(true_labels), collect_named_entities(pred_labels),
-                                           tags=set([label[2:] for label in true_labels if len(label) > 2]))
-    results = compute_precision_recall_wrapper(results)
-    return results
+        print(len(resp), len(data))
 
-res = calculate_metrics_for_all_classes(4)
-for r in res:
-    print(r, res[r])
+        assert len(resp) == len(data)
+        print(data)
+        print(resp)
+
+
+        from seqeval.metrics import precision_score, recall_score, f1_score, classification_report
+
+        y_true = [data]
+
+        y_pred = [resp]
+
+        precision = precision_score(y_true, y_pred)
+        recall = recall_score(y_true, y_pred)
+        f1 = f1_score(y_true, y_pred)
+
+        # Печать результатов
+        print(f"Precision: {precision:.2f}")
+        print(f"Recall: {recall:.2f}")
+        print(f"F1 Score: {f1:.2f}")
+
+        # Полный отчёт
+        print("\nClassification Report:")
+        print(classification_report(y_true, y_pred))
+
+
+run(2, False)

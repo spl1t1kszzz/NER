@@ -1,1 +1,0 @@
-Извлеки именованные сущности, принадлежащие только следующим классам (Activity, Application, Dataset, Environment, InfoResource, Lang, Method, Model, Object, Organization, Person, Science, Subject, Task, Technology) из следующего текста: "{текст_входных_данных}"
