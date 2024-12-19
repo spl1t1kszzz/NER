@@ -38,7 +38,7 @@ def get_bio_from_dataset(dataset_file_name: str) -> list[str]:
 
 def run(num, gpt: bool):
     if gpt:
-        prompt_template = get_prompt_template('prompts/term_classification(nodef + CoT).txt')
+        prompt_template = get_prompt_template('prompts/term_classification(nodef + fp_corr).txt')
 
         with open(f'./new_datasets/dataset_{num}/dataset_{num}.txt', 'r', encoding='utf8') as dataset_:
             dataset = dataset_.read()
@@ -73,7 +73,7 @@ def run(num, gpt: bool):
     else:
 
 
-        resp = get_bio_from_response(f'./new_datasets/dataset_{num}/CoT.txt')
+        resp = get_bio_from_response(f'./new_datasets/dataset_{num}/nodef+fp_corr.txt')
         data = get_bio_from_dataset(f'./new_datasets/dataset_{num}/dataset_{num}.txt')
 
         print(len(resp), len(data))
@@ -103,4 +103,4 @@ def run(num, gpt: bool):
         print(classification_report(y_true, y_pred))
 
 
-run(2, False)
+run(1, False)
