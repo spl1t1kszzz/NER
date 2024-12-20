@@ -1,5 +1,5 @@
 Разметь текст по схеме BIO, используя только указанные классы сущностей:
-Activity, Application, Dataset, Environment, InfoResource, Lang, Method, Metric, Model, Object, Organization, Person, Science, Subject, Task, Technology.
+Activity, Application, Dataset, Environment, InfoResource, Lang, Method, Method_ML, Metric, Model, Object, Organization, Person, Science, Subject, Task.
 
 Каждое слово должно быть помечено одной из меток:
 - "B-<сущность>" — начало сущности,

@@ -1,6 +1,6 @@
 Задача:
 Разметить текст по схеме BIO, используя только указанные классы сущностей:  
-Activity, Application, Dataset, Environment, InfoResource, Lang, Method, Metric, Model, Object, Organization, Person, Science, Subject, Task, Technology.  
+Activity, Application, Dataset, Environment, InfoResource, Lang, Method, Metric, Model, Object, Organization, Person, Science, Subject, Task.
 
 Правила:
 1. Строго придерживайся указанных классов сущностей.** Не добавляй новых классов.

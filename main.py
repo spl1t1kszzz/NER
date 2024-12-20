@@ -1,5 +1,7 @@
 from fcntl import FASYNC
 
+from click import prompt
+
 
 def get_prompt_template(prompt_file_name: str) -> str:
     with open(prompt_file_name, 'r', encoding='utf8') as prompt_file:
@@ -32,13 +34,14 @@ def get_bio_from_dataset(dataset_file_name: str) -> list[str]:
             word, label = parts
             bio.append(label)
         else:
-            print(line ,len(parts))
+            print(line, len(parts))
 
     return bio
 
-def run(num, gpt: bool):
+
+def run(num, gpt: bool, prompt_file_name: str, resp_file_name: str):
     if gpt:
-        prompt_template = get_prompt_template('prompts/term_classification(nodef + fp_corr).txt')
+        prompt_template = get_prompt_template(prompt_file_name)
 
         with open(f'./new_datasets/dataset_{num}/dataset_{num}.txt', 'r', encoding='utf8') as dataset_:
             dataset = dataset_.read()
@@ -73,8 +76,8 @@ def run(num, gpt: bool):
                     print(response)
     else:
 
-
-        resp = get_bio_from_response(f'./new_datasets/dataset_{num}/nodef+fp_corr.txt')
+        # resp = get_bio_from_response(f'./new_datasets/dataset_{num}/nodef+fp_corr.txt')
+        resp = get_bio_from_response(resp_file_name)
         data = get_bio_from_dataset(f'./new_datasets/dataset_{num}/dataset_{num}.txt')
 
         print(len(resp), len(data))
@@ -82,7 +85,6 @@ def run(num, gpt: bool):
         assert len(resp) == len(data)
         print(data)
         print(resp)
-
 
         from seqeval.metrics import precision_score, recall_score, f1_score, classification_report
 
@@ -104,4 +106,8 @@ def run(num, gpt: bool):
         print(classification_report(y_true, y_pred))
 
 
-run(4, False)
+dataset_num = 1
+gpt = False
+
+run(dataset_num, gpt, prompt_file_name='./prompts/term_classification(def + fp_corr).txt',
+    resp_file_name=f'./new_datasets/dataset_{dataset_num}/def + fp_corr.txt')
