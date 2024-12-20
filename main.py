@@ -58,6 +58,7 @@ def run(num, gpt: bool):
                     messages = []
                     # messages.append({"role": "system", "content": system_text})
                     messages.append({"role": "user", "content": prompt})
+                    # print(messages)
 
                     response_big = client.chat.completions.create(
                         model="openai/gpt-4",
@@ -103,4 +104,4 @@ def run(num, gpt: bool):
         print(classification_report(y_true, y_pred))
 
 
-run(1, False)
+run(4, False)
