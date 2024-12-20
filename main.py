@@ -109,5 +109,5 @@ def run(num, gpt: bool, prompt_file_name: str, resp_file_name: str):
 dataset_num = 1
 gpt = False
 
-run(dataset_num, gpt, prompt_file_name='./prompts/term_classification(def + fp_corr).txt',
-    resp_file_name=f'./new_datasets/dataset_{dataset_num}/def + fp_corr.txt')
+run(dataset_num, gpt, prompt_file_name='./prompts/term_classification(def + CoT).txt',
+    resp_file_name=f'./new_datasets/dataset_{dataset_num}/def + CoT.txt')
