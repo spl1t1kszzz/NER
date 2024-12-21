@@ -135,7 +135,7 @@ GPT-2 B-Model
 обучена O
 на O
 русскоязычном B-Lang
-корпусе B-Corpus
+корпусе B-Dataset
 . O
 
 # text =   Если коммерческие организации можно оправдать тем, что код часто вплетен в инфраструктуру проектов, то что говорить про исследовательские институты и некоммерческие компании вроде DeepMind и OpenAI?
@@ -173,7 +173,7 @@ OpenAI B-Organization
 Платформа O
 для O
 видеозвонков O
-Maxine B-Technology
+Maxine B-Application
 объединяет O
 в O
 себе O
@@ -185,7 +185,7 @@ ML B-Method_ML
 . O
 
 # text = Maxine, платформа для видеозвонков, включает в себя разнообразные алгоритмы машинного обучения.
-Maxine B-Technology
+Maxine B-Application
 , O
 платформа O
 для O
@@ -214,7 +214,7 @@ Meet I-Organization
 фона B-Subject
 на O
 основе O
-фреймворка B-Library
+фреймворка B-Application
 от O
 Mediapipe B-Organization
 ( O
@@ -238,8 +238,8 @@ Google B-Organization
 функцию O
 для O
 сервиса O
-YouTube B-Technology
-Stories I-Technology
+YouTube B-Application
+Stories I-Application
 на O
 iOS B-Environment
 , O

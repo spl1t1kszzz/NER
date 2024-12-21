@@ -79,11 +79,11 @@ SQLAlchemy B-Environment
 Мы O
 собираемся O
 применить O
-Beautiful B-Library
-Soup I-Library
+Beautiful B-Application
+Soup I-Application
 и O
 библиотеку O
-urllib B-Library
+urllib B-Application
 , O
 чтобы O
 соскрапить O
@@ -125,5 +125,5 @@ Sky I-Application
 я O
 воспользуюсь O
 библиотекой O
-requests B-Library
+requests B-Application
 . O

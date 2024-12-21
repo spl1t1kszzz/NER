@@ -1,4 +1,3 @@
-# text = Стивен Л. Тейлер, основатель компании Imagination Engines, продвигает свою нейросеть под названием DABUS (Device for the Autonomous Boot-strapping of Unified Sentience).
 Стивен B-Person
 Л I-Person
 . I-Person
@@ -16,7 +15,7 @@ Engines I-Organization
 названием O
 DABUS B-Model
 ( O
-Device B-Model
+Device I-Model
 for I-Model
 the I-Model
 Autonomous I-Model
