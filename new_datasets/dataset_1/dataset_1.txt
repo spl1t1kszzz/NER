@@ -343,7 +343,7 @@ AI I-Organization
 рассказать O
 вам O
 о O
-Сноркеле B-Technology
+Сноркеле B-Application
 - O
 фреймворке B-Environment
 для I-Environment
