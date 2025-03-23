@@ -1,75 +1,80 @@
-После O
-выхода O
+ После B-Environment
+выхода B-Object
 учебника O
 я O
-читал O
-курс O
-на O
-его O
+читал B-Task
+курс I-Task
+на B-InfoResource
+его B-InfoResource
 основе O
-в O
-УрФУ B-Organization
+в B-Organization
+УрФУ I-Organization
 , O
-ШАДе B-Organization
-, O
-ИТМО B-Organization
+ШАДe O
+, B-Organization
+ИТМО I-Organization
+и B-Organization
+СПбГУ I-Organization
 и O
-СПбГУ B-Organization
-и O
-убедился O
+убедился B-Activity
 , O
-что O
-наличие O
+что B-Metric
+наличие B-Metric
 перевода O
-очень O
-помогает O
-. O
-В O
-случае O
-NLP B-Science
-потребность O
-в O
-« O
-локализованных O
-» O
-учебных O
-материалах O
-еще O
-заметнее O
-, O
-чем O
-в O
-информационном B-Task
-поиске I-Task
-. O
-Слушателям O
+очень B-Metric
+помогает B-Method_ML
+. O В
+случае
+NLP
+потребность
+B-Task
+в
+"локализованных"
+O
+учебных
+B-Object
+материалах
+O
+еще
+O
+заметнее
+O
+,
+чем
+O
+в
+B-Task
+информационном
+O
+поиске
+O
+.
+O Слушателям B-Task
 предлагается O
 самостоятельно O
-реализовать O
-методы O
+реализовать B-Method
+методы B-Method_ML
 морфологического B-Method
-анализа I-Method
+анализа I-Method_ML
 , O
 определения B-Task
-тональности I-Task
+тональности B-Task
 текста I-Task
-, O
+, B-Task
 автоматического B-Task
-реферирования I-Task
+реферирования B-Task
 документов I-Task
-, O
+, B-Task
 извлечения B-Task
-именованных I-Task
+именнованных B-Task
 сущностей I-Task
-и O
+и B-Task
 машинного B-Task
 перевода I-Task
-. O
-Желательно O
-, O
+. O Желательно,
 чтобы O
-слушатели O
-обладали O
+слушатели B-Person
+обадали B-Task
 базовыми O
 знаниями O
 линейной B-Science
@@ -80,19 +85,17 @@ NLP B-Science
 , O
 математической B-Science
 статистики I-Science
-и O
+и B-Method_ML
 машинного B-Method_ML
 обучения I-Method_ML
 , O
-а O
-также O
-навыками O
-программирования O
+а B-Skill
+навыками B-Skill
+программирования I-Skill
 ( O
-необходимы O
+необходимыми O
 для O
-решения O
-практических O
-заданий O
-) O
-. O
+решения B-Task
+практических I-Task
+заданий I-Task
+) . O
