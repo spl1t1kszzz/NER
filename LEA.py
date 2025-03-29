@@ -1,3 +1,6 @@
+import json
+
+
 def lea(clusters_true, clusters_pred):
     def compute_links(cluster):
         n = len(cluster)
@@ -33,3 +36,28 @@ def lea(clusters_true, clusters_pred):
     f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
 
     return {'precision': precision, 'recall': recall, 'f1': f1}
+
+
+texts = ['79830', '418701', '542718', '713920', '716918', '731102', '732240', '737018', '737046', '747330', '747488',
+         '760298']
+f1_sum = 0
+for text_id in texts:
+    with open(f"./texts/{text_id}/text_{text_id}.json", "r", encoding="utf-8") as text_file:
+        data = json.load(text_file)
+
+    text = data['text']
+    clusters_true = data['entities']
+
+    clusters_with_mentions = []
+
+    for cluster in clusters_true:
+        mentions = []
+        for start, end in cluster:
+            mention = text[start:end]
+            mentions.append(mention)
+        clusters_with_mentions.append(mentions)
+    with open(f"./texts/{text_id}/ref_CoT.json", "r", encoding="utf-8") as entities_file:
+        data = json.load(entities_file)
+        res = data['entities']
+        f1_sum += data['metrics']['f1']
+print(f1_sum / len(texts))
