@@ -1,0 +1,131 @@
+Перед O
+переходом B-Task
+к O
+самим B-Metric
+метрикам O
+необходимо O
+ввести B-Task
+важную B-Subject
+концепцию B-Subject
+для O
+описания B-Task
+этих B-Metric
+в терминах O
+ошибок B-Science
+классификации B-Science
+— B-Object
+confusion B-Object
+matrix B-Object
+( O
+матрица B-Object
+ошибок B-Object
+) O
+. OИнтуитивно B-Science
+понятной B-Science
+очевидной B-Science
+и B-Science
+почти B-Science
+неиспользуемой B-Science
+метрикой B-Metric
+является B-Metric
+accuracy B-Metric
+— B-Object
+доля B-Metric
+правильных B-Metric
+ответов B-Metric
+алгоритма B-Model
+. O Для оценки B-Task
+качества B-Metric
+работы B-Model
+алгоритма B-Method_ML
+на каждом B-Task
+из B-Class
+по отдельности B-Task
+введем B-Metric
+метрики B-Metric
+precision B-Metric (точность) B-Metric
+и B-Metric
+recall B-Metric (полнота) B-Metric
+. O Precision можно B-Metric
+интерпретировать B-Method_ML
+как O
+долю B-Metric
+объектов B-Object
+, B-Task
+названных B-Method_ML
+классификатором B-Model
+положительными B-Task
+и B-Coordination
+при этом B-Coordination
+действительно B-Task
+состоящими B-Task
+положительными B-Task
+, B-Coordination
+recall B-Metric
+показывает B-Method_ML
+какую B-Task
+долю B-Metric
+объектов B-Object
+положительного B-Task
+класса B-Subject
+из B-Coordination
+всех B-Task
+объектов B-Object
+положительного B-Task
+класса B-Subject
+нашел B-Task
+алгоритм B-Model
+. OF B-Metric
+- F-мера B-Metric
+достигает B-Task
+максимума B-Metric
+при B-Task
+полноте B-Metric
+и B-Task
+точности B-Metric
+, B-Environment
+равными B-Metric
+единице B-Metric
+и B-Task
+близка B-Task
+к нулю B-Metric
+, B-Environment
+если B-Environment
+один B-Environment
+из B-Object
+аргументов B-Object
+близок B-Task
+к нулю B-Metric
+. O Одним B-Method
+из O
+способов B-Task
+оценить B-Metric
+модель B-Model
+в O
+целом O
+, не O
+привязываясь O
+к O
+конкретному B-Threshold
+порогу O
+, является B-Metric
+AUC-ROC (или B-Metric
+ROC AUC) — B-Metric
+площадь (Area Under Curve) B-Metric
+под B-Curve
+кривой B-Curve
+ошибок (Receiver Operating Characteristic curve) . O Интуитивно B-Task
+можно O
+представить O
+минимизацию B-Metric
+logloss B-Metric
+как O
+задачу B-Task
+максимизации B-Metric
+accuracy B-Metric
+путем O
+штрафа B-Method_ML
+за B-Method_ML
+неверные B-Method_ML
+предсказания B-Method_ML
+. O

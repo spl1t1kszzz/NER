@@ -1,0 +1,148 @@
+ Типичным B-Method_ML
+методом B-Method_ML
+обучения B-Method_ML
+без B-Environment
+учителя B-Environment
+является B-Task
+кластеризация B-Task
+, B-Task
+благодаря B-Task
+которому B-Task
+обучающая B-Object
+выборка B-Object
+разбивается B-Task
+на B-Object
+устойчивые B-Object
+группы B-Object
+или B-Object
+кластеры B-Object
+. O Другой B-Method_ML
+подход B-Method
+обучения B-Task
+без B-Object
+учителя B-Person
+для B-Task
+текстов B-Object
+называется B-InfoResource
+тематическим B-Method_ML
+моделированием B-Method_ML
+(topic B-Object
+моделирование B-Method_ML
+), B-Object
+позволяющим B-Task
+выявить B-Task
+в неразмеченных B-Dataset
+текстах B-Dataset
+основные B-Subject
+тематики B-Subject
+. O Если O
+отказываемся B-Method_ML
+от O
+методов B-Method_ML
+unsupervised B-Metric
+learning B-Model, O
+то O
+логично B-Task
+обратиться B-Task
+к B-Method_ML
+методам B-Method_ML
+obucheniya B-Model
+s uchitelyaem B-Method_ML
+(supervised B-Metric
+learning B-Model) B-Model
+и B-Task
+в частности B-Task
+к B-Method_ML
+klassifikatsii B-Method_ML
+. O Результат B-Task
+работы B-Task
+языковой B-Model
+модели B-Model
+является B-Object
+эмбеддинги B-Object
+— это O
+отображение B-Method_ML
+из B-Environment
+пространства B-Environment
+слов B-Object
+в пространство B-Environment
+векторов B-Object
+конкретной B-Object
+фиксированной B-Object
+длины B-Object
+причем B-Object
+векторы B-Object
+соответствующие B-Object
+близким B-Relation
+по смыслу B-Relation
+словам B-Object
+будут B-Relation
+Расположены B-Relation
+в новом B-Environment
+пространстве B-Environment
+рядом B-Relation
+далекие B-Relation
+по смыслу B-Relation
+словами B-Object
+далеко B-Relation
+. O При использовании TF-IDF **B-Model**
+(например, вот) **O**
+подход B-Method
+с фильтром B-Method_ML
+по частотам **O**
+и логистической B-Method
+регрессией **O**
+уже можно получить прекрасные результаты: **O**
+изначально **O**
+в краулер **O**
+отправлялись **O**
+очень **O**
+разные **O**
+тексты, **O**
+и модель **B-Model**
+прекрасно **O**
+справляется. **O** Используя B-Method_ML,
+TF-IDF I-Method_ML
+с фильтром B-Method
+по частотам I-Method,
+и B-Method
+логистической B-Method_ML
+регрессией I-Method_ML
+, уже B-Task
+можно I-Task
+достичь O
+отличных B-Metric
+результатов I-Metric
+. O Для O
+каждой B-Object
+из O
+популяций B-Object
+рассчитаем B-Method_ML
+word2vec B-Metric
+расстояние B-Metric
+до B-Model
+центра B-Model
+положительной B-Task
+обучающей B-Task
+выборки B-Task
+. O Распределения B-Object
+можно O
+разделить O
+, I
+и B-Task
+для O
+оценки O
+расстояния B-Metric
+между B-Object
+распределениями B-Object
+в O
+первую B-Task
+очередь I-Task
+логично B-Task
+обратиться O
+к B-Metric
+Дивергенции B-Method_ML
+Кульбака-Лейблера B-Method_ML
+( B-Method_ML
+ДКЛ B-Method_ML
+) . O

@@ -1,0 +1,77 @@
+ В этой B-Task
+статье B-Object
+мы B-Person
+расскажем O
+о B-Method
+Propensity Score Adjustment B-Method_ML
+, B-Task
+который B-Method_ML
+применим O
+для B-Task
+коррекции B-Task
+смещений B-Task
+и B-Task
+улучшения B-Task
+данных B-Dataset
+, полученных B-Dataset
+на B-Environment
+онлайн-панелях B-Environment
+. O Итоги B-Object
+коэффициенты B-Metric
+, O
+корректирующие O
+смещение O
+онлайн-выборки B-Task, O
+можно O
+рассчитать O
+по O
+методу B-Method_ML
+Хорвица-Томпсона B-Method_ML
+. O Взвешивание B-Method_ML
+- O
+метод B-Method
+предназначен O
+для O
+коррекции B-Task
+известных B-InfoResource
+перекосов B-Task
+по O
+социально-демографическим B-Enviroment
+атрибутам B-Enviroment
+. O Авторы B-Person
+оригинального B-InfoResource
+исследования B-Organization
+Pew Research B-Organization
+рекомендуют B-Method_ML
+использовать B-Task
+для B-Task
+корректировки B-Task
+онлайн-опросов B-Task
+модели B-Model
+случайных B-Environment
+лесов B-Environment
+(random forest) I-Method_ML
+. O Сейчас O
+стандарт B-Task
+коррекции O
+онлайн-выборок I-Task
+нахожится O
+на B-Environment
+стадии B-Task
+обсуждения I-Task
+и B-Task
+разработки I-Task
+и B-Method_ML
+Propensity Score Adjustment B-Method_ML
+, B-Method_ML
+который O
+мы O
+рассмотрели O
+, B-Method_ML
+может B-Task
+стать O
+общепринятым B-Method_ML
+способом B-Method_ML
+коррекции I-Task
+онлайн-панелей I-Task
+. O

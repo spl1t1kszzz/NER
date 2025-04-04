@@ -1,0 +1,23 @@
+{
+  "clusters": [
+  ["T9", "GPT-1", "GPT-2", "GPT-3", "GPT-3.5", "InstructGPT", "ChatGPT", "GPT-4", "языковые модели", "LLM", "Large Language Models"],
+  ["OpenAI", "компания, сделавшая ChatGPT"],
+  ["Игорь Котенков", "канал Сиолошная"],
+  ["Павел Комаровский", "канал RationalAnswer"],
+  ["нейросети", "языковые нейросетки", "нейронки"],
+  ["Трансформер", "архитектура Трансформера"],
+  ["промпт", "prompt", "запрос", "фраза «давай подумаем шаг за шагом»", "детализированный промпт"],
+  ["Reddit", "форум Reddit"],
+  ["Samsung Galaxy"],
+  ["Барак", "Обама", "Хуссейн"],
+  ["Сэм Альтман", "исполнительный директор OpenAI"],
+  ["Google", "исследователи Google"],
+  ["Microsoft"],
+  ["китайцы"],
+  ["Habr"],
+  ["Open Data Science corporate blog"],
+  ["Machine learning"],
+  ["Artificial Intelligence"],
+  ["Natural Language Processing"]
+]
+}

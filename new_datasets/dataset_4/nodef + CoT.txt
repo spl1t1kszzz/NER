@@ -1,0 +1,101 @@
+ После B-Environment
+выхода B-Object
+учебника O
+я O
+читал B-Task
+курс I-Task
+на B-InfoResource
+его B-InfoResource
+основе O
+в B-Organization
+УрФУ I-Organization
+, O
+ШАДe O
+, B-Organization
+ИТМО I-Organization
+и B-Organization
+СПбГУ I-Organization
+и O
+убедился B-Activity
+, O
+что B-Metric
+наличие B-Metric
+перевода O
+очень B-Metric
+помогает B-Method_ML
+. O В
+случае
+NLP
+потребность
+B-Task
+в
+"локализованных"
+O
+учебных
+B-Object
+материалах
+O
+еще
+O
+заметнее
+O
+,
+чем
+O
+в
+B-Task
+информационном
+O
+поиске
+O
+.
+O Слушателям B-Task
+предлагается O
+самостоятельно O
+реализовать B-Method
+методы B-Method_ML
+морфологического B-Method
+анализа I-Method_ML
+, O
+определения B-Task
+тональности B-Task
+текста I-Task
+, B-Task
+автоматического B-Task
+реферирования B-Task
+документов I-Task
+, B-Task
+извлечения B-Task
+именнованных B-Task
+сущностей I-Task
+и B-Task
+машинного B-Task
+перевода I-Task
+. O Желательно,
+чтобы O
+слушатели B-Person
+обадали B-Task
+базовыми O
+знаниями O
+линейной B-Science
+алгебры I-Science
+, O
+теории B-Science
+вероятностей I-Science
+, O
+математической B-Science
+статистики I-Science
+и B-Method_ML
+машинного B-Method_ML
+обучения I-Method_ML
+, O
+а B-Skill
+навыками B-Skill
+программирования I-Skill
+( O
+необходимыми O
+для O
+решения B-Task
+практических I-Task
+заданий I-Task
+) . O

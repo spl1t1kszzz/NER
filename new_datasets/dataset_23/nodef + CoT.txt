@@ -1,0 +1,39 @@
+ Речь B-Task
+шла O
+о B-Task
+морфологической B-Method
+разметке I-Task
+( part B-Method
+of B-Method
+speech B-Method
+tagging I-Method
+) I-Task
+современных O
+текстов B-Task
+на B-Lang
+русском B-Lang
+. OКак O
+обычно B-Task
+, O
+результат B-Result
+разметки B-Result
+будет O
+опубликован B-Publication
+на O
+условиях B-License
+лицензии B-License
+Creative B-Organization
+Commons B-Organization
+. O Извлечение B-Task
+именнованных B-Object
+сущностей B-Object
+из B-InfoResource
+текста B-InfoResource
+— O
+одна O
+из O
+востребованных B-Task
+функций B-Task
+текстовой B-Application
+аналитики B-Application
+. O

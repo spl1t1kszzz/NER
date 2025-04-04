@@ -1,0 +1,201 @@
+ С
+моделью B-Model
+от OpenAI B-Organization
+связано S-Environment
+сразу S-Environment
+несколько S-Environment
+новостей B-Task
+— хорошая B-InfoResource
+и не B-InfoResource
+очень B-InfoResource
+. O Сделка O
+OpenAI B-Organization
+и B-Organization
+Microsoft O
+. OНачать B-Task
+придется O
+с O
+менее O
+пrijatnaya B-Object
+— O
+kompaniya B-Organization
+Majkrosoft B-Organization
+zavladaela O
+eksklyuzivnye B-Metric
+prava B-Model
+na O
+GPT-3 B-Model
+. O Сделка B-Task
+предсказуемо O
+вызвала B-Task
+негодование B-Task
+— O
+Элон B-Person
+Мusk B-Person
+, O
+основатель B-Person
+OpenAI B-Organization
+, O
+а O
+ныне B-Task
+бывший B-Task
+член B-Task
+совета B-Task
+директоров B-Task
+компании B-Organization
+, O
+заявил B-Task
+что B-Metric
+Майкрософт B-Organization
+по O
+сути B-Task
+захватили B-Task
+OpenAI B-Organization
+. O Дело B-Organization
+в O
+том, O
+что O
+OpenAI B-Organization
+изначально B-Organization
+создавалась B-Organization
+как B-Organization
+некоммерческая B-Organization
+организация B-Organization
+с O
+высокой O
+миссией — O
+не O
+позволить B-Task
+искусственному B-Model
+интеллекту B-Model
+оказаться B-Task
+в руках O
+отдельного B-Organization
+государства B-Organization
+или B-Organization
+корпорации B-Organization
+. O ruGPT3 B-Model
+от O
+Сбера B-Organization
+. O Теперь K-Task
+к O
+более B-Task
+приятной B-Task
+новости O
+— O
+исследователи B-Person
+из O
+Сбера B-Organization
+выложили O
+в открытый B-Environment
+доступ O
+модель B-Model
+, O
+которая B-Model
+повторяет B-Model
+архитектуру GPT-3 B-Model
+и B-Coordination
+основана B-Model
+на коде GPT-2 B-Model
+и B-Coordination
+самое B-Task
+главное B-Task
+, O
+обучена B-Task
+на O
+русскоязычном B-Dataset
+корпусе B-Dataset
+. OЕсли B-Organization
+коммерческие B-Organization
+Организации B-Organization
+можно O
+оправдать B-Task
+тем, B-Task
+что B-Task
+код B-Model
+часто B-Metric
+вплетен B-Method_ML
+в O
+инфраструктуру B-Environment
+проектов B-Task
+то B-Task
+что B-Task
+говорить B-Task
+про B-Organization
+исследовательские B-Organization
+Институты B-Organization
+и B-Organization
+некоммерческие B-Organization
+компании B-Organization
+вроде B-Organization
+DeepMind B-Organization
+и B-Organization
+OpenAI B-Organization
+? O Платформа B-Application
+для O
+видеозвонков B-Task
+Maxine B-Organization
+объединяет O
+в себе O
+целый B-Object
+зоопарк B-Model
+ML- B-Method_ML
+алгоритмов I-Method_ML
+. OMaxine, B-Application
+, O
+платформа B-Application
+для B-Task
+видеозвонков B-Task
+, O
+имеет B-contains
+в B-Environment
+себе B-Environment
+разнообразные B-Method_ML
+алгоритмы B-Method_ML
+машинного B-ML
+обучения B-ML
+. OGoogle B-Organization
+Meet B-Application
+поделились O
+кейсом O
+создания B-Task
+своих O
+алгоритма B-Model
+для O
+качественного B-Metric
+удаления B-Method_ML
+фона B-Object
+на O
+основе B-Framework
+фреймворка B-Framework
+от B-Organization
+Mediapipe B-Organization
+( B-Open_parenthesis
+который B-Method
+умеет B-Method
+отслеживание B-Method
+движение B-Object
+глаз B-Object
+, B-Object
+головы B-Object
+и B-Object
+рук B-Object
+) B-Close_parenthesis
+. OGoogle B-Organization
+также O
+запустил O
+новою B-Task
+функцию B-Task
+для B-Application
+сервиса B-Application
+YouTube B-Application
+Stories B-Application
+на B-Environment
+iOS B-Environment
+,
+который B-Object
+позволяет O
+улучшать B-Task
+качество B-Task
+речи B-Task
+. O

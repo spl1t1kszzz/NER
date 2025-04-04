@@ -1,0 +1,69 @@
+Метрики по классам сущностей:
+Класс: Application
+  Precision: 0.47
+  Recall: 0.56
+  F1 Score: 0.51
+Класс: Object
+  Precision: 0.00
+  Recall: 0.00
+  F1 Score: 0.00
+Класс: Method
+  Precision: 0.33
+  Recall: 0.11
+  F1 Score: 0.17
+Класс: Lang
+  Precision: 0.50
+  Recall: 0.67
+  F1 Score: 0.57
+Класс: Person
+  Precision: 0.88
+  Recall: 1.00
+  F1 Score: 0.93
+Класс: Organization
+  Precision: 0.86
+  Recall: 0.78
+  F1 Score: 0.82
+Класс: Metric
+  Precision: 0.60
+  Recall: 0.30
+  F1 Score: 0.40
+Класс: InfoResource
+  Precision: 1.00
+  Recall: 0.31
+  F1 Score: 0.47
+Класс: Subject
+  Precision: 0.00
+  Recall: 0.00
+  F1 Score: 0.00
+Класс: Method_ML
+  Precision: 0.33
+  Recall: 0.19
+  F1 Score: 0.24
+Класс: Activity
+  Precision: 0.00
+  Recall: 0.00
+  F1 Score: 0.00
+Класс: Dataset
+  Precision: 0.33
+  Recall: 1.00
+  F1 Score: 0.50
+Класс: Science
+  Precision: 0.72
+  Recall: 0.65
+  F1 Score: 0.68
+Класс: Model
+  Precision: 0.53
+  Recall: 0.64
+  F1 Score: 0.58
+Класс: Environment
+  Precision: 1.00
+  Recall: 0.17
+  F1 Score: 0.29
+Класс: Task
+  Precision: 0.53
+  Recall: 0.39
+  F1 Score: 0.45
+Общие метрики по всем сущностям:
+Precision: 0.72
+Recall: 0.45
+F1 Score: 0.56

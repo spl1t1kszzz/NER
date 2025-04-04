@@ -1,0 +1,108 @@
+ Специалисты B-Organization
+Data B-Science
+часто O
+применяют O
+различные O
+методы B-Method
+получения B-Method_ML
+датасетов B-Dataset
+. O Профессионалы B-Organization
+в O
+области B-Science
+Data B-Dataset
+Science I-Science
+часто O
+используют B-Method
+различные I-Method
+подходы B-Method
+к B-Dataset
+созданию B-Task
+наборов B-Dataset
+данных I-Dataset
+. OЦель B-Task
+этой B-Task
+статьи B-Task
+— O
+представить B-Task
+краткий O
+обзор B-Task
+трех B-Number
+разных B-Adj
+методов B-Method
+использования B-Method
+языка B-Lang
+Python B-Lang
+. OЯ B-Task
+расскажу B-Task
+, O
+как B-Task
+делать B-Task
+это B-Task
+с O
+помощью B-Tool
+Jupyter B-Tool
+Notebook B-Tool
+. O
+
+Здесь мы выделяем следующие сущности:
+- "расскажу" - класс Task
+- "делать это" - класс Task
+- "с помощью" - класс Environment
+- "Jupyter Notebook" - класс Tool Библиотека B-Application
+SQLAlchemy B-Application
+позволит B-Task
+связать O
+ваш O
+код B-Object
+в B-Environment
+ноутбуке B-Object
+с B-Dataset
+наиболее B-Metric
+распространенными B-Metric
+типами B-Dataset
+баз B-Dataset
+данных B-Dataset
+. O Мы B-Person
+собираемся O
+применить B-Method_ML
+Beautiful O
+Soup B-Application
+и B-Application
+urllib O
+, O
+чтобы O
+соскрапить B-Task
+названия B-Object
+отелей B-Object
+и B-Metric
+цены I-Metric
+на I-Metric
+них I-Metric
+с B-Webpage
+веб-сайта B-Webpage
+TripAdvisor B-Organization
+. O Я B-Person
+приведу B-Task
+простой B-Object
+пример B-Task
+извлечения B-Task
+данных B-Object
+о B-Object
+погоде B-Environment
+с B-Application
+общедоступного B-InfoResource
+API B-Application
+Dark B-Organization
+Sky B-Organization
+. O Для B-Task
+доступа B-Task
+к B-Dataset
+к B-Dataset
+из B-Environment
+Dark B-InfoResource
+Sky B-InfoResource
+я B-Person
+воспользуюсь B-Method
+библиотекой B-Method
+requests B-Method
+. O

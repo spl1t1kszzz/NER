@@ -1,0 +1,26 @@
+ Стивен B-Person
+Л. I-Person
+Тейлер B-Person
+, O
+основатель B-Organization
+компании B-Organization
+Imagination B-Organization
+Engines B-Organization
+, O
+продвигает B-Task
+свою B-Model
+нейросеть B-Model
+под B-Model
+названием B-Model
+DABUS B-Model
+( O
+Device B-Object
+for B-Task
+the B-Task
+Autonomous B-Task
+Boot-strapping B-Task
+of B-Task
+Unified B-Task
+Sentience B-Task
+) O
+. O
