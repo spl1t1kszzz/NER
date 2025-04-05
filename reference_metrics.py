@@ -1,9 +1,24 @@
+import json
+
 import LEA
 
 texts = ['79830', '418701', '542718', '713920', '716918', '731102', '732240', '737018', '737046', '747330', '747488',
          '760298']
-models = ['o3-mini', '4o']
+models = ['o3-mini', '4o', 'o3-mini-high']
 prompt = 'reference_CoT'
+
+
+def create_prompts(prompt, texts):
+    with open(f"./prompts/reference/{prompt}.txt", 'r', encoding='utf-8') as f:
+        prompt_text = f.read()
+        for t in texts:
+            with open(f"./texts/{t}/text_{t}.json", 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                a = prompt_text.replace('<ТВОЙ ТЕКСТ ЗДЕСЬ>', data['text'])
+                with open(f'{t}.txt', 'w', encoding='utf-8') as f1:
+                    f1.write(a)
+
+
 for model in models:
     f1_scores = []
     for text in texts:

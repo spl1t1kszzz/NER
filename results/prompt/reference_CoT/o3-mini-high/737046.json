@@ -1,0 +1,32 @@
+{
+  "clusters": [
+  ["Airflow", "Apache Airflow", "веб-интерфейс Airflow"],
+  ["ML-пайплайн", "пайплайн", "пайплайна"],
+  ["Task 1", "Подготовка данных", "news_load"],
+  ["Task 2", "Предсказание модели", "news_label"],
+  ["Task 3", "Подготовка отчета", "news_by_topic"],
+  ["NLP-модель", "модель", "zero-shot classification"],
+  ["DockerOperator"],
+  ["Docker Compose", "docker-compose.yml", "docker compose up", "docker compose up --build", "docker compose down --volumes --rmi all"],
+  ["Docker-контейнер", "Docker-образ", "Dockerfile"],
+  ["data", "локальная директория data"],
+  ["GitHub"],
+  ["FastAPI", "ML веб-сервис"],
+  ["Kubernetes", "Kubernetes в продакшен-среде"],
+  ["feedparser"],
+  ["pandas", "pd"],
+  ["Click"],
+  ["transformers"],
+  ["scikit-learn"],
+  ["Metadata Database"],
+  ["Webserver"],
+  ["Scheduler"],
+  ["ml_pipeline", "ml_pipeline/data_loader", "ml_pipeline/model_prediction"],
+  ["dags"],
+  ["docker-socket-proxy"],
+  ["учетная запись airflow", "логин airflow", "пароль airflow"],
+  ["телеграм-канал"],
+  ["DS/ML/AI"],
+  ["статей", "новых статей"]
+]
+}

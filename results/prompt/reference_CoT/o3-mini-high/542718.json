@@ -1,0 +1,31 @@
+{
+  "clusters":[
+  ["аналитиков", "веб-аналитики", "data scientists", "бизнес-аналитики", "финансовые аналитики", "продуктовые аналитики", "системные аналитики", "UX аналитики", "свои"],
+  ["я", "меня", "мне", "ты", "своей работы"],
+  ["python", "язык python", "Python", "данного языка программирования", "аналитика знающего python", "на чистом python", "это"],
+  ["R", "на R"],
+  ["sklearn", "библиотека sklearn"],
+  ["pipeline", "конвейеры предварительной обработки данных", "конвейеры построения моделей"],
+  ["C++", "язык C++"],
+  ["C#", "похожий на него язык C#"],
+  ["MatLab", "Язык MatLab"],
+  ["AutoML", "ящик под названием AutoML", "алгоритм AutoML", "она"],
+  ["H2O", "библиотека H2O"],
+  ["MLBox", "библиотека MLBox"],
+  ["Google AutoML Tables"],
+  ["Azure Machine Learning (Microsoft)"],
+  ["SageMaker Autopilot (Amazon)"],
+  ["Bell Integrator", "компания Bell Integrator"],
+  ["neuton.ai", "платформа neuton.ai"],
+  ["конструктор машинного обучения Azure от Microsoft"],
+  ["платформа SberDS Сбербанка", "SberDS"],
+  ["Power BI", "Power BI Desktop", "Power BI Services"],
+  ["Tableau"],
+  ["Qlik Sence"],
+  ["QlikView", "корпоративная платформа QlikView"],
+  ["Excel"],
+  ["ролик в Youtube", "ссылка на ролик в Youtube", "FazilBabu"],
+  ["генеративная текстовая модель от OpenAI", "эта модель", "такую модель", "это"],
+  ["GitHub", "репозиторий GitHub"]
+]
+}
