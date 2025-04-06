@@ -1,0 +1,20 @@
+{
+  "clusters":[
+  ["Atlassian Intelligence", "ИИ-помощник", "виртуального товарища по команде", "Он", "помощник", "помощнику", "его", "ИИ"],
+  ["Компания Atlassian", "Atlassian", "компании"],
+  ["OpenAI"],
+  ["Confluence"],
+  ["Jira"],
+  ["Jira Service Management"],
+  ["GitHub"],
+  ["Copilot", "который", "Он"],
+  ["ChatGPT"],
+  ["React"],
+  ["MDN"],
+  ["Azure"],
+  ["TypeScript"],
+  ["Webpack"],
+  ["Amazon"],
+  ["CodeWhisperer", "свой ИИ-помощник по кодированию", "он", "Он"]
+]
+}

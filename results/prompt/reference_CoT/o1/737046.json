@@ -1,0 +1,8 @@
+{
+  "clusters":[
+  ["Apache Airflow", "Airflow", "Он"],
+  ["Scheduler", "Он"],
+  ["Webserver", "Пользовательский интерфейс Airflow", "Он"],
+  ["DAG", "Directed Acyclic Graph", "Это"]
+]
+}

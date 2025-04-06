@@ -1,0 +1,20 @@
+{
+  "clusters": [
+  ["Airflow", "Apache Airflow", "Он", "Airflow", "инструмент", "Apache Airflow", "Airflow DAG", "DAG", "пайплайна", "граф", "пайплайна", "пайплайнов", "пайплайны", "пайплайна", "пайплайн", "пайплайн", "пайплайна", "DAG", "financial_news", "наш пайплайн", "пайплайн", "пайплайна", "пайплайна", "financial_news", "DAG", "пайплайна", "пайплайн", "пайплайна", "DAG", "пайплайны"],
+  ["Docker", "Docker Compose", "Docker", "Docker-контейнерах", "DockerOperator", "Docker-контейнерах", "Docker-контейнерах", "Docker-контейнерах", "DockerOperator", "DockerOperator", "Docker Compose", "docker-compose.yml", "Docker Compose", "docker-compose.yml", "docker-compose.yml", "Docker Compose", "DockerOperator", "Docker-контейнерах", "Docker Compose", "Docker Compose", "docker-compose.yml"],
+  ["NLP", "Natural Language Processing", "NLP-модель", "zero-shot classification", "zero-shot classification", "zero-shot модели", "модель", "модель", "zero-shot classification"],
+  ["таски", "тасок", "таски", "таска", "тасок", "таски", "таски", "тасок", "таски"],
+  ["модель", "модели", "моделью", "модель", "модель", "модель", "модель", "модель", "моделью", "модель"],
+  ["новости", "новостей", "новости", "новостей", "новостей", "новостей", "новости"],
+  ["предсказания", "предсказания модели", "предсказания", "предсказаний", "предсказания", "предсказания"],
+  ["задачи", "задач", "задачи", "задача", "задачи"],
+  ["данные", "данных", "данных", "данные", "данные", "данные", "данные"],
+  ["финансовые новости", "новости из открытого источника", "новости из мира финансов", "новости"],
+  ["пайплайн на Airflow", "первый ML-пайплайн", "первый пайплайн на Airflow", "наш пайплайн"],
+  ["PythonOperator"],
+  ["Dockerfile"],
+  ["метаданные", "Metadata Database", "метаданных"],
+  ["Scheduler", "он"],
+  ["Webserver", "веб-интерфейс", "веб-интерфейс Airflow", "пользовательский интерфейс"]
+]
+}

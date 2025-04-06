@@ -1,0 +1,24 @@
+{
+  "clusters": [
+  ["аналитиков", "аналитики", "data scientists", "бизнес-аналитики", "финансовые аналитики", "продуктовые", "системные", "UX аналитики", "аналитиков"],
+  ["Python", "python", "python", "данного языка программирования", "python", "python"],
+  ["R", "язык R", "R", "R"],
+  ["C++", "язык C++"],
+  ["C#", "язык C#"],
+  ["MatLab", "Язык MatLab", "данный язык", "MatLab"],
+  ["AutoML", "AutoML", "AutoML", "ящика под названием AutoML", "AutoML", "AutoML"],
+  ["H2O"],
+  ["MLBox", "библиотека MLBox", "MLBox"],
+  ["Google AutoML Tables"],
+  ["Azure Machine Learning", "Azure от Microsoft"],
+  ["SageMaker Autopilot"],
+  ["neuton.ai"],
+  ["SberDS Сбербанка"],
+  ["Power BI", "Power BI", "Power BI Desktop", "Power BI Services", "Power BI"],
+  ["Tableau", "Tableau", "Tableau"],
+  ["Qlik Sense", "Qlik Sence", "Qlik Sence"],
+  ["QlikView", "QlikView"],
+  ["Excel", "Excel"],
+  ["генеративной текстовой модели от OpenAI", "модели"]
+]
+}

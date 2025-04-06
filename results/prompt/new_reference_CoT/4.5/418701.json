@@ -1,0 +1,24 @@
+{
+  "clusters":[
+  ["синтаксические парсеры", "синтаксический парсер", "синтаксические парсеры", "парсер", "парсер", "парсеры", "парсеров", "парсер", "парсер", "парсер", "парсера", "парсер", "парсер", "парсер", "парсером", "парсер", "парсер", "парсер", "парсера", "парсера", "парсера", "парсеру", "парсер", "парсинг", "парсинг", "синтаксический парсинг", "синтаксический парсинг", "парсинга", "парсингом", "парсинг"],
+  ["русский язык", "русским языком", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русский язык", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка", "русского языка"],
+  ["Денис Кирьянов", "Меня", "я", "мы", "нам", "мы", "мы", "мы", "мы", "мы", "мы", "нам", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "нас", "мы", "мы", "мы"],
+  ["Сбербанк", "Сбер"],
+  ["обработка естественного языка", "NLP"],
+  ["Universal Dependencies", "Universal Dependencies", "Universal Dependencies", "Universal Dependencies", "Universal Dependencies", "Universal Dependencies"],
+  ["SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus"],
+  ["UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0", "UDPipe 2.0"],
+  ["Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet"],
+  ["Mystem", "Mystem", "Mystem", "Mystem", "Mystem", "Mystem", "Mystem", "Mystem", "Mystem", "Mystem"],
+  ["pymorphy2", "pymorphy2", "pymorphy2", "pymorphy2", "pymorphy2"],
+  ["RNNMorph", "RNNMorph", "RNNMorph", "RNNMorph", "RNNMorph"],
+  ["CoNLL Shared Task", "CoNLL Shared Task", "CoNLL Shared Task"],
+  ["грамматика зависимостей", "грамматике зависимостей", "грамматика зависимостей", "грамматике зависимостей", "грамматика зависимостей", "грамматике зависимостей"],
+  ["грамматика непосредственно составляющих", "грамматикой непосредственно составляющих", "грамматика непосредственно составляющих"],
+  ["дерево зависимостей", "дерево зависимостей", "дерева зависимостей", "дерево зависимостей", "дерево зависимостей"],
+  ["Martin", "Мартина"],
+  ["Jurafsky", "Журафского"],
+  ["LAS", "Labeled attachment score"],
+  ["UAS", "Unlabeled attachment score"]
+]
+}

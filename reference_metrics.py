@@ -5,7 +5,7 @@ import LEA
 texts = ['79830', '418701', '542718', '713920', '716918', '731102', '732240', '737018', '737046', '747330', '747488',
          '760298']
 models = ['o3-mini', '4o', 'o3-mini-high']
-prompt = 'reference_CoT'
+prompt = 'new_reference_CoT'
 
 
 def create_prompts(prompt, texts):
@@ -19,7 +19,7 @@ def create_prompts(prompt, texts):
                     f1.write(a)
 
 
-for model in models:
+def get_metrics_for_model(model, prompt, texts):
     f1_scores = []
     for text in texts:
         pred_clusters_filename = f'results/prompt/{prompt}/{model}/{text}.json'
@@ -27,3 +27,8 @@ for model in models:
         f1 = LEA.calculate_metrics(pred_clusters_filename, true_clusters_filename)['f1']
         f1_scores.append(f1)
     print('avg F1 score', model, prompt, sum(f1_scores) / len(f1_scores))
+
+
+prompts = ['reference_CoT', 'new_reference_CoT', '2_new_ref_CoT']
+for p in prompts:
+    get_metrics_for_model('4o', p, texts)

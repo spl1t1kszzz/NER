@@ -1,0 +1,28 @@
+{
+  "clusters": [
+  ["python", "Python", "на питоне"],
+  ["R", "язык R"],
+  ["C++"],
+  ["C#"],
+  ["MatLab", "язык MatLab"],
+  ["sklearn", "библиотеки sklearn", "библиотека sklearn"],
+  ["pipeline", "конвейеры"],
+  ["AutoML", "ящик под названием AutoML"],
+  ["H2O"],
+  ["MLBox"],
+  ["Google AutoML Tables"],
+  ["Azure Machine Learning (Microsoft)", "конструктор машинного обучения Azure"],
+  ["SageMaker Autopilot (Amazon)"],
+  ["Bell Integrator", "neuton.ai"],
+  ["SberDS Сбербанка"],
+  ["Power BI"],
+  ["Tableau"],
+  ["Qlik Sence"],
+  ["QlikView"],
+  ["Excel"],
+  ["генеративной текстовой модели от OpenAI", "такая модель"],
+  ["Youtube", "ролик в Youtube", "ссылка на ролик в Youtube", "https://www.youtube.com/watch?v=fZSFNUT6iY8&t=4s&ab_channel=FazilBabu"],
+  ["GitHub"],
+  ["веб-аналитики", "data scientists", "бизнес-аналитики", "финансовые аналитики", "продуктовые аналитики", "системные аналитики", "UX аналитики"]
+]
+}

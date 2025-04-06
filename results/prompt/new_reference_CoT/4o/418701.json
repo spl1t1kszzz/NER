@@ -1,0 +1,29 @@
+{
+  "clusters": [
+  ["Денис Кирьянов", "я", "Меня", "наш", "мы", "нам", "нас", "нам", "мы", "нам", "мы", "мы", "мы", "мы", "мы", "мы", "нас", "мы", "мы", "наш", "нас", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "наш", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "мы", "наш", "мы", "наш", "мы"],
+  ["Сбербанк", "Сбер", "корпоративный блог Сбера"],
+  ["NLP", "обработка естественного языка", "Natural Language Processing"],
+  ["синтаксические парсеры", "парсер", "парсер", "парсер", "синтаксический парсер", "парсер", "UDPipe", "UDPipe 2.0", "UDPipe", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe 2.0", "UDPipe 2.0", "UDPipe", "UDPipe", "UDPipe"],
+  ["Syntaxnet", "Syntaxnet", "Syntaxnet", "Syntaxnet"],
+  ["Universal Dependencies", "Universal Dependencies", "Universal Dependencies", "проект Universal Dependencies"],
+  ["CoNLL Shared Task", "соревнование CoNLL Shared Task"],
+  ["SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "SynTagRus", "корпус SynTagRus"],
+  ["RNNMorph", "RNNMorph", "RNNMorph", "анализатор RNNMorph"],
+  ["Mystem", "анализатор Mystem", "Mystem", "Mystem"],
+  ["pymorphy2", "pymorphy2"],
+  ["русский язык", "русского языка", "русским языком"],
+  ["английский", "английском"],
+  ["французский", "французского"],
+  ["директор", "директора", "директора", "директора"],
+  ["мама", "мамой"],
+  ["переведи", "Переведи"],
+  ["Петя", "Петя"],
+  ["привет", "привет"],
+  ["Никита Кузнецов", "Никиту Кузнецова"],
+  ["Наталья Филиппова"],
+  ["Антон Алексеев"],
+  ["Андрей Кутузов"],
+  ["Борис Орехов"],
+  ["Михаил Попов"]
+]
+}

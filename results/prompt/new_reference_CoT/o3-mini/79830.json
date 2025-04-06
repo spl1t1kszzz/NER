@@ -1,0 +1,18 @@
+{
+  "clusters": [
+  ["Заметки об NLP (часть 3)"],
+  ["Habr"],
+  ["Natural Language Processing", "NLP"],
+  ["Artificial Intelligence"],
+  ["синтаксический анализ предложений", "parsing"],
+  ["phrase structure-based parsing"],
+  ["dependency parsing"],
+  ["грамматика Хомского", "грамматики Хомского", "Хомский"],
+  ["Stanford parser", "стэнфордский парсер"],
+  ["Люсьен Теньер", "Lucien Tesniere"],
+  ["Платон", "отец ООП Платона"],
+  ["Connexor"],
+  ["компьютерная лингвистика"],
+  ["обработка текстов"]
+]
+}
