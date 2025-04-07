@@ -1,16 +1,10 @@
 import json
 import os
-from typing import List
-
 import tiktoken
 from tqdm import tqdm
-
+from typing import List
 import LEA
-
-texts = ['79830', '418701', '542718', '713920', '716918', '731102', '732240', '737018', '737046', '747330', '747488',
-         '760298']
-models = ['o3-mini', '4o', 'o3-mini-high']
-prompt = 'new_reference_CoT'
+from openai import OpenAI
 
 
 def split_text_by_tokens(text: str, model: str = "gpt-4o", max_tokens: int = 1000, overlap: int = 200) -> List[str]:
@@ -29,13 +23,14 @@ def split_text_by_tokens(text: str, model: str = "gpt-4o", max_tokens: int = 100
 
 
 def create_prompts(prompt, texts):
-    with open(f"./prompts/reference/{prompt}.txt", 'r', encoding='utf-8') as f:
-        prompt_text = f.read()
-        for t in texts:
-            with open(f"./texts/{t}/text_{t}.json", 'r', encoding='utf-8') as f:
-                data = json.load(f)
+    with open(f"./prompts/reference/{prompt}.txt", 'r', encoding='utf-8') as template:
+        prompt_text = template.read()
+        for t in tqdm(texts, desc=f"Создание промптов {prompt}"):
+            with open(f"./texts/{t}/text_{t}.json", 'r', encoding='utf-8') as text:
+                data = json.load(text)
                 a = prompt_text.replace('<ТВОЙ ТЕКСТ ЗДЕСЬ>', data['text'])
-                with open(f'{t}.txt', 'w', encoding='utf-8') as f1:
+                os.makedirs(f'./ready_prompts/{prompt}', exist_ok=True)
+                with open(f'./ready_prompts/{prompt}/{t}.txt', 'w', encoding='utf-8') as f1:
                     f1.write(a)
 
 
@@ -66,48 +61,36 @@ def get_metrics_for_model(model, prompt, texts):
     print('avg F1 score', model, prompt, sum(f1_scores) / len(f1_scores))
 
 
-from openai import OpenAI
+models = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
+          '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9'}
 
-key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=key)
-# response = client.chat.completions.create(
-#     model="gpt-4o-mini-2024-07-18",
-#     messages=[
-#         {"role": "system", "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
-#         {"role": "user", "content": "Привет! Расскажи анекдот."}
-#     ]
-# )
-#
-# print(response.choices[0].message.content)
-#
-# for t in tqdm(['418701'], desc="Обработка текстов"):
-#     with open(f"./{t}.txt", 'r', encoding='utf-8') as prompt_file:
-#         prompt_text = prompt_file.read()
-#
-#         response = client.chat.completions.create(
-#             model="ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9",
-#             messages=[
-#                 {"role": "system",
-#                  "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
-#                 {"role": "user", "content": prompt_text}
-#             ]
-#         )
-#
-#         # Получаем текст ответа
-#         answer = response.choices[0].message.content.strip()
-#
-#         # Формируем словарь с ключом "clusters"
-#         result = {"clusters": answer}
-#
-#         # Сохраняем в JSON-файл
-#         with open(f"./results/prompt/3_new_ref_CoT/4o-mini-tuned/{t}.json", 'w', encoding='utf-8') as json_file:
-#             json.dump(result, json_file, ensure_ascii=False, indent=4)
 
-# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini/79830.json', './texts/79830/text_79830.json'))
-get_metrics_for_model('4o-mini-tuned', '3_new_ref_CoT', ['79830', '542718', '731102'])
-get_metrics_for_model('4o-mini', '3_new_ref_CoT', ['79830', '542718', '731102'])
-get_metrics_for_model('4o', '3_new_ref_CoT', ['79830', '542718', '731102'])
-# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/79830.json', './texts/79830/text_79830.json'))
-# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/418701.json', './texts/418701/text_418701.json'))
-# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/542718.json', './texts/542718/text_542718.json'))
-# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/731102.json', './texts/731102/text_731102.json'))
+def resolve_reference(model_, prompt, texts):
+    key = "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"
+    client = OpenAI(api_key=key)
+    print(models[model_])
+    for t in tqdm(texts, desc="Обработка текстов"):
+        with open(f"./ready_prompts/{prompt}/{t}.txt", 'r', encoding='utf-8') as prompt_file:
+            prompt_text = prompt_file.read()
+            response = client.chat.completions.create(
+                model=models[model_],
+                messages=[
+                    {"role": "system",
+                     "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
+                    {"role": "user", "content": prompt_text}
+                ]
+            )
+            answer = response.choices[0].message.content.strip()
+            result = {"clusters": answer}
+            with open(f"./results/prompt/{prompt}/{model_}/{t}.json", 'w', encoding='utf-8') as json_file:
+                json.dump(result, json_file, ensure_ascii=False, indent=4)
+
+
+prompt_template = '3_new_ref_CoT'
+texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
+         '760298']
+m = ['4o', '4o-mini', '4o-mini-tuned']
+# create_prompts(prompt_template, texts)
+# resolve_reference(model, prompt_template, texts)
+for model in m:
+    get_metrics_for_model(model, prompt_template, texts)

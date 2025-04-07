@@ -49,7 +49,6 @@ def get_true_clusters(clusters_filename):
     with open(clusters_filename, "r", encoding="utf-8") as true_clusters_file:
         data = json.load(true_clusters_file)
         text = data['text']
-        # print(text_id, len(text))
         clusters_true = data['entities']
         clusters_with_mentions = []
         for cluster in clusters_true:
