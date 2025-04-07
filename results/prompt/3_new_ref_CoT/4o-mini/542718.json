@@ -1,0 +1,98 @@
+{
+  "clusters": [
+    [
+      "дата-аналитика",
+      "аналитиков",
+      "аналитики"
+    ],
+    [
+      "Data Mining",
+      "Data visualization",
+      "Machine learning",
+      "Artificial Intelligence"
+    ],
+    [
+      "Python",
+      "язык python",
+      "питон"
+    ],
+    [
+      "data scientists",
+      "аналитика знающего python"
+    ],
+    [
+      "R",
+      "язык R"
+    ],
+    [
+      "C++",
+      "C#",
+      "язык C++",
+      "язык C#"
+    ],
+    [
+      "MatLab",
+      "Язык MatLab"
+    ],
+    [
+      "Java",
+      "JavaScript",
+      "Scala"
+    ],
+    [
+      "AutoML",
+      "библиотека машинного обучения",
+      "веб-сервис"
+    ],
+    [
+      "H2O",
+      "библиотека H2O",
+      "MLBox",
+      "библиотека MLBox"
+    ],
+    [
+      "Google AutoML Tables",
+      "Azure Machine Learning",
+      "SageMaker Autopilot"
+    ],
+    [
+      "Bell Integrator",
+      "платформа neuton.ai"
+    ],
+    [
+      "Azure",
+      "Microsoft",
+      "платформа SberDS"
+    ],
+    [
+      "инструменты BI",
+      "Power BI",
+      "Tableau",
+      "Qlik Sense",
+      "QlikView",
+      "Excel"
+    ],
+    [
+      "Power BI",
+      "аналитических инструментов от Microsoft"
+    ],
+    [
+      "Tableau",
+      "семейство онлайн и десктопных приложений"
+    ],
+    [
+      "Qlik Sence",
+      "QlikView"
+    ],
+    [
+      "Excel",
+      "инструмент"
+    ],
+    [
+      "AI",
+      "генеративной текстовой модели от OpenAI",
+      "модель",
+      "текстовой модели"
+    ]
+  ]
+}

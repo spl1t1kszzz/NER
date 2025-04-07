@@ -52,13 +52,21 @@ def create_context_prompts(prompt, texts, model):
 
 
 def get_metrics_for_model(model, prompt, texts):
-    f1_scores = []
+    all_metrics = []
+
     for text in texts:
         pred_clusters_filename = f'results/prompt/{prompt}/{model}/{text}.json'
         true_clusters_filename = f"./texts/{text}/text_{text}.json"
-        f1 = LEA.calculate_metrics(pred_clusters_filename, true_clusters_filename)['f1']
-        f1_scores.append(f1)
-    print('avg F1 score', model, prompt, sum(f1_scores) / len(f1_scores))
+        metrics = LEA.calculate_metrics(pred_clusters_filename, true_clusters_filename)
+        all_metrics.append(metrics)
+    keys = all_metrics[0].keys()
+    avg_metrics = {}
+
+    for key in keys:
+        values = [m[key] for m in all_metrics if key in m]
+        avg_metrics[f"avg_{key}"] = sum(values) / len(values) if values else 0.0
+
+    return avg_metrics
 
 
 models = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
@@ -66,7 +74,7 @@ models = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
 
 
 def resolve_reference(model_, prompt, texts):
-    key = "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"
+    key = os.getenv("OPENAI_API_KEY")
     client = OpenAI(api_key=key)
     print(models[model_])
     for t in tqdm(texts, desc="Обработка текстов"):
@@ -93,4 +101,4 @@ m = ['4o', '4o-mini', '4o-mini-tuned']
 # create_prompts(prompt_template, texts)
 # resolve_reference(model, prompt_template, texts)
 for model in m:
-    get_metrics_for_model(model, prompt_template, texts)
+    print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])

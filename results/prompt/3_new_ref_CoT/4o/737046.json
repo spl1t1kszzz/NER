@@ -1,0 +1,294 @@
+{
+  "clusters": [
+    [
+      "туториале",
+      "этот туториал",
+      "прошлом туториале"
+    ],
+    [
+      "ML-пайплайн",
+      "пайплайн",
+      "наш пайплайн",
+      "проектирование пайплайна",
+      "структура проекта",
+      "проект"
+    ],
+    [
+      "Airflow",
+      "веб-интерфейс Airflow",
+      "интерфейсе Airflow",
+      "веб-интерфейс",
+      "инструмент"
+    ],
+    [
+      "машинного обучения",
+      "ML",
+      "машинным обучением"
+    ],
+    [
+      "новости",
+      "фид",
+      "новости из открытого источника",
+      "новостей",
+      "news_feed",
+      "финансовые новости"
+    ],
+    [
+      "NLP-модель",
+      "модель",
+      "Zero-shot classification",
+      "zero-shot classification",
+      "предсказание модели",
+      "модели",
+      "model_predict",
+      "zero-shot моделей",
+      "Код предсказания модели"
+    ],
+    [
+      "GitHub",
+      "Код доступен на GitHub"
+    ],
+    [
+      "ETL пайплайны"
+    ],
+    [
+      "аппарат",
+      "Docker",
+      "Container",
+      "Docker-контейнеры"
+    ],
+    [
+      "Apache Airflow",
+      "Airflow DAG",
+      "DAG",
+      "Граф",
+      "Граф является направленным",
+      "DAG (Directed Acyclic Graph)"
+    ],
+    [
+      "task",
+      "Таски",
+      "Задачи"
+    ],
+    [
+      "Operator",
+      "Операторы",
+      "PythonOperator",
+      "DockerOperator"
+    ],
+    [
+      "Metadata Database",
+      "база"
+    ],
+    [
+      "Webserver"
+    ],
+    [
+      "Scheduler"
+    ],
+    [
+      "Kubernetes"
+    ],
+    [
+      "data_path",
+      "пути"
+    ],
+    [
+      "data",
+      "директорию data",
+      "папку data",
+      "значение"
+    ],
+    [
+      "зависимости",
+      "зависимости между задачами"
+    ],
+    [
+      "CNBC",
+      "cnbc.com"
+    ],
+    [
+      "Feed",
+      "Результат"
+    ],
+    [
+      "Click"
+    ],
+    [
+      "Logging",
+      "Логирование"
+    ],
+    [
+      "Текст",
+      "тексты"
+    ],
+    [
+      "Python"
+    ],
+    [
+      "Hugging Face Hub"
+    ],
+    [
+      "модель valhalla/distilbart-mnli-12-1",
+      "valhalla/distilbart-mnli-12-1"
+    ],
+    [
+      "текст"
+    ],
+    [
+      "Python *Machine learning *Natural Language Processing"
+    ],
+    [
+      "Feature Engineering"
+    ],
+    [
+      "Training Pipeline"
+    ],
+    [
+      "Batch Prediction Pipeline"
+    ],
+    [
+      "latentcy"
+    ],
+    [
+      "FastAPI"
+    ],
+    [
+      "load"
+    ],
+    [
+      "Click"
+    ],
+    [
+      "ladda"
+    ],
+    [
+      "json"
+    ],
+    [
+      "Dockerfile"
+    ],
+    [
+      "SQL-запросов"
+    ],
+    [
+      "ml_pipeline"
+    ],
+    [
+      "Docker-compose.yml"
+    ],
+    [
+      "model-предсказания"
+    ],
+    [
+      "Click"
+    ],
+    [
+      "PythonOperator"
+    ],
+    [
+      "tasks"
+    ],
+    [
+      "df"
+    ],
+    [
+      "Log"
+    ],
+    [
+      "cmd"
+    ],
+    [
+      "order"
+    ],
+    [
+      "Новости"
+    ],
+    [
+      "Расписание"
+    ],
+    [
+      "Amazon S3"
+    ],
+    [
+      "DVC"
+    ],
+    [
+      "MLflow"
+    ],
+    [
+      "Инициализация"
+    ],
+    [
+      "Docker Engine"
+    ],
+    [
+      "Memory"
+    ],
+    [
+      "Linux"
+    ],
+    [
+      "Id"
+    ],
+    [
+      "UID"
+    ],
+    [
+      "web-интерфейс"
+    ],
+    [
+      "Log In"
+    ],
+    [
+      "Панель"
+    ],
+    [
+      "Task log"
+    ],
+    [
+      "Graph"
+    ],
+    [
+      "Session"
+    ],
+    [
+      "Kde"
+    ],
+    [
+      "Stat"
+    ],
+    [
+      "Vall"
+    ],
+    [
+      "pandas"
+    ],
+    [
+      "feedparser"
+    ],
+    [
+      "first_"
+    ],
+    [
+      "fin"
+    ],
+    [
+      "d",
+      "done"
+    ],
+    [
+      "done",
+      "is_done"
+    ],
+    [
+      "sof"
+    ],
+    [
+      "stand"
+    ],
+    [
+      "взаимоотношение"
+    ]
+  ]
+}
