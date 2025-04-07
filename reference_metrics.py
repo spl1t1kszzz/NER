@@ -3,6 +3,7 @@ import os
 from typing import List
 
 import tiktoken
+from tqdm import tqdm
 
 import LEA
 
@@ -65,16 +66,48 @@ def get_metrics_for_model(model, prompt, texts):
     print('avg F1 score', model, prompt, sum(f1_scores) / len(f1_scores))
 
 
-# prompts = ['reference_CoT', 'new_reference_CoT', '2_new_ref_CoT']
-# for p in prompts:
-#     get_metrics_for_model('4o', p, texts)
+from openai import OpenAI
 
+key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=key)
+# response = client.chat.completions.create(
+#     model="gpt-4o-mini-2024-07-18",
+#     messages=[
+#         {"role": "system", "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
+#         {"role": "user", "content": "Привет! Расскажи анекдот."}
+#     ]
+# )
+#
+# print(response.choices[0].message.content)
+#
+# for t in tqdm(['418701'], desc="Обработка текстов"):
+#     with open(f"./{t}.txt", 'r', encoding='utf-8') as prompt_file:
+#         prompt_text = prompt_file.read()
+#
+#         response = client.chat.completions.create(
+#             model="ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9",
+#             messages=[
+#                 {"role": "system",
+#                  "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
+#                 {"role": "user", "content": prompt_text}
+#             ]
+#         )
+#
+#         # Получаем текст ответа
+#         answer = response.choices[0].message.content.strip()
+#
+#         # Формируем словарь с ключом "clusters"
+#         result = {"clusters": answer}
+#
+#         # Сохраняем в JSON-файл
+#         with open(f"./results/prompt/3_new_ref_CoT/4o-mini-tuned/{t}.json", 'w', encoding='utf-8') as json_file:
+#             json.dump(result, json_file, ensure_ascii=False, indent=4)
 
-# get_metrics_for_model('4o', 'reference_CoT', texts)
-# get_metrics_for_model('4o', 'new_reference_CoT', texts)
-# get_metrics_for_model('4o', '2_new_ref_CoT', texts)
-# get_metrics_for_model('4o', '3_new_ref_CoT', texts)
-get_metrics_for_model('4o', 'ref_ctx', ['79830'])
-print(LEA.get_true_clusters(f'./texts/79830/text_79830.json'))
-
-create_context_prompts('ref_ctx', texts, 'gpt-4o')
+# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini/79830.json', './texts/79830/text_79830.json'))
+get_metrics_for_model('4o-mini-tuned', '3_new_ref_CoT', ['79830', '542718', '731102'])
+get_metrics_for_model('4o-mini', '3_new_ref_CoT', ['79830', '542718', '731102'])
+get_metrics_for_model('4o', '3_new_ref_CoT', ['79830', '542718', '731102'])
+# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/79830.json', './texts/79830/text_79830.json'))
+# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/418701.json', './texts/418701/text_418701.json'))
+# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/542718.json', './texts/542718/text_542718.json'))
+# print(LEA.calculate_metrics('./results/prompt/3_new_ref_CoT/4o-mini-tuned/731102.json', './texts/731102/text_731102.json'))
