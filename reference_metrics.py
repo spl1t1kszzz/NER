@@ -70,7 +70,8 @@ def get_metrics_for_model(model, prompt, texts):
 
 
 models = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
-          '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9'}
+          '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9',
+          '4o-mini-rucoco-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt'}
 
 
 def resolve_reference(model_, prompt, texts):
@@ -97,8 +98,9 @@ def resolve_reference(model_, prompt, texts):
 prompt_template = '3_new_ref_CoT'
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
-m = ['4o', '4o-mini', '4o-mini-tuned']
+m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-rucoco-tuned']
 # create_prompts(prompt_template, texts)
-# resolve_reference(model, prompt_template, texts)
-for model in m:
-    print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])
+model = m[3]
+resolve_reference(model, prompt_template, texts)
+# for model in m:
+# print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])

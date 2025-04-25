@@ -1,4 +1,5 @@
 import json
+import utils
 
 
 def lea(clusters_true, clusters_pred):
@@ -42,17 +43,7 @@ def lea(clusters_true, clusters_pred):
 def calculate_metrics(pred_clusters_filename, true_clusters_filename):
     with open(pred_clusters_filename, "r", encoding="utf-8") as file:
         predicted = json.load(file)['clusters']
-    clusters_true = get_true_clusters(true_clusters_filename)
+    clusters_true = utils.get_true_clusters(true_clusters_filename)
     return lea(clusters_true, predicted)
 
 
-def get_true_clusters(clusters_filename):
-    with open(clusters_filename, "r", encoding="utf-8") as true_clusters_file:
-        data = json.load(true_clusters_file)
-        text = data['text']
-        clusters_true = data['entities']
-        clusters_with_mentions = []
-        for cluster in clusters_true:
-            mentions = [text[start:end] for start, end in cluster]
-            clusters_with_mentions.append(mentions)
-        return clusters_with_mentions
