@@ -1,25 +1,9 @@
 import json
 import os
-import tiktoken
 from tqdm import tqdm
 from typing import List
 import LEA
 from openai import OpenAI
-
-
-def split_text_by_tokens(text: str, model: str = "gpt-4o", max_tokens: int = 1000, overlap: int = 200) -> List[str]:
-    enc = tiktoken.encoding_for_model(model)
-    tokens = enc.encode(text)
-    chunks = []
-
-    i = 0
-    while i < len(tokens):
-        chunk_tokens = tokens[i:i + max_tokens]
-        chunk_text = enc.decode(chunk_tokens)
-        chunks.append(chunk_text)
-        i += max_tokens - overlap
-
-    return chunks
 
 
 def create_prompts(prompt, texts):
@@ -34,29 +18,13 @@ def create_prompts(prompt, texts):
                     f1.write(a)
 
 
-def create_context_prompts(prompt, texts, model):
-    with open(f"./prompts/reference/{prompt}.txt", 'r', encoding='utf-8') as f:
-        prompt_text = f.read()
-        for t in texts:
-            os.makedirs(f"./{t}", exist_ok=True)
-            with open(f"./texts/{t}/text_{t}.json", 'r', encoding='utf-8') as text_file:
-                data = json.load(text_file)['text']
-                split_data = split_text_by_tokens(data, model, max_tokens=1000)
-                for idx, chunk in enumerate(split_data):
-                    with open(f'./{t}/{idx}.txt', 'w', encoding='utf-8') as f1:
-                        if idx == 0:
-                            p = prompt_text.replace('<ТВОЙ ТЕКСТ ЗДЕСЬ>', data)
-                            f1.write(p)
-                        else:
-                            f1.write(chunk)
-
-
 def get_metrics_for_model(model, prompt, texts):
     all_metrics = []
 
     for text in texts:
         pred_clusters_filename = f'results/prompt/{prompt}/{model}/{text}.json'
         true_clusters_filename = f"./texts/{text}/text_{text}.json"
+
         metrics = LEA.calculate_metrics(pred_clusters_filename, true_clusters_filename)
         all_metrics.append(metrics)
     keys = all_metrics[0].keys()
@@ -69,20 +37,16 @@ def get_metrics_for_model(model, prompt, texts):
     return avg_metrics
 
 
-models = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
-          '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9',
-          '4o-mini-rucoco-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt'}
-
-
 def resolve_reference(model_, prompt, texts):
-    key = os.getenv("OPENAI_API_KEY")
+    # key = os.getenv("OPENAI_API_KEY")
+    key = "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"
     client = OpenAI(api_key=key)
-    print(models[model_])
+    print(models_map[model_])
     for t in tqdm(texts, desc="Обработка текстов"):
         with open(f"./ready_prompts/{prompt}/{t}.txt", 'r', encoding='utf-8') as prompt_file:
             prompt_text = prompt_file.read()
             response = client.chat.completions.create(
-                model=models[model_],
+                model=models_map[model_],
                 messages=[
                     {"role": "system",
                      "content": "Ты являешься экспертом в задаче решения референций из текстов на русском языке."},
@@ -95,12 +59,18 @@ def resolve_reference(model_, prompt, texts):
                 json.dump(result, json_file, ensure_ascii=False, indent=4)
 
 
+models_map = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
+              '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9',
+              '4o-mini-tuned-rucoco': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt',
+              '4,1-mini': 'gpt-4.1-mini-2025-04-14',
+              '4,1-mini-tuned-rucoco': 'ft:gpt-4.1-mini-2025-04-14:personal:rucoco-coref:BQ8Xu1hn',
+              '4,1': 'gpt-4.1-2025-04-14',}
 prompt_template = '3_new_ref_CoT'
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
-m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-rucoco-tuned']
+m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-tuned-rucoco', '4,1-mini', '4,1-mini-tuned-rucoco', '4,1']
 # create_prompts(prompt_template, texts)
-model = m[3]
-resolve_reference(model, prompt_template, texts)
-# for model in m:
-# print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])
+model = m[6]
+# resolve_reference(model, prompt_template, texts)
+for model in m:
+    print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])
