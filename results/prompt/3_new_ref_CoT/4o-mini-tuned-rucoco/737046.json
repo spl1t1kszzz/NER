@@ -1,0 +1,76 @@
+{
+  "clusters": [
+    [
+      "ML-пайплайн",
+      "пайплайн"
+    ],
+    [
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Apache Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow",
+      "Airflow"
+    ],
+    [
+      "NLP-модель",
+      "ее"
+    ],
+    [
+      "модель",
+      "модель",
+      "модель"
+    ],
+    [
+      "Hugging Face Hub",
+      "Hugging Face Hub"
+    ],
+    [
+      "тематические области",
+      "классов",
+      "их"
+    ],
+    [
+      "модель zero-shot classification",
+      "она"
+    ],
+    [
+      "модели",
+      "ее"
+    ],
+    [
+      "Docker",
+      "Docker"
+    ],
+    [
+      "раздел services",
+      "каждый сервис"
+    ],
+    [
+      "Metadata Database",
+      "одних сервисов"
+    ],
+    [
+      "Webserver",
+      "его"
+    ],
+    [
+      "Scheduler",
+      "Он"
+    ],
+    [
+      "других сервисов",
+      "другие сервисы"
+    ],
+    [
+      "dockersocketproxy",
+      "его"
+    ]
+  ]
+}

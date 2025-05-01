@@ -1,5 +1,8 @@
 import json
 from typing import List
+import pandas as pd
+import os
+
 
 
 def get_true_clusters(clusters_filename):
@@ -44,5 +47,8 @@ train_file_names = ['./train/2000_finance_mos.json', './train/2000_sport_asiancu
                     './train/2020_hitech_ai_tax.json', './train/2020_hitech_anymalc_lake.json',
                     './train/2020_hitech_dit_viber.json', './train/2020_hitech_fake_vote.json']
 
-create_fine_tuning_data('./fine_tuning/10_texts_rucoco_fine_tuning.jsonl', './prompts/reference/3_new_ref_CoT.txt',
-                        train_file_names)
+# create_fine_tuning_data('./fine_tuning/10_texts_rucoco_fine_tuning.jsonl', './prompts/reference/3_new_ref_CoT.txt',
+#                         train_file_names)
+
+
+

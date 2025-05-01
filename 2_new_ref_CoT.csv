@@ -1,0 +1,8 @@
+Модель,Промпт,Precision,Recall,F1
+4o,2_new_ref_CoT,0.064,0.008,0.014
+4o-mini,2_new_ref_CoT,0.093,0.006,0.011
+4o-mini-tuned,2_new_ref_CoT,0.162,0.213,0.177
+4o-mini-tuned-rucoco,2_new_ref_CoT,0.0,0.0,0.0
+"4,1-mini",2_new_ref_CoT,0.068,0.01,0.016
+"4,1-mini-tuned-rucoco",2_new_ref_CoT,0.105,0.037,0.05
+"4,1",2_new_ref_CoT,0.0,0.0,0.0

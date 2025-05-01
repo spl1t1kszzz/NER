@@ -1,5 +1,7 @@
 import json
 import os
+
+import pandas as pd
 from tqdm import tqdm
 from typing import List
 import LEA
@@ -25,21 +27,30 @@ def get_metrics_for_model(model, prompt, texts):
         pred_clusters_filename = f'results/prompt/{prompt}/{model}/{text}.json'
         true_clusters_filename = f"./texts/{text}/text_{text}.json"
 
+        if not (os.path.exists(pred_clusters_filename) and os.path.exists(true_clusters_filename)):
+            print(f"[!] Пропущен текст {text} — отсутствует один из файлов")
+            continue
         metrics = LEA.calculate_metrics(pred_clusters_filename, true_clusters_filename)
         all_metrics.append(metrics)
+
+    if not all_metrics:
+        print("[!] Не найдено ни одного набора метрик.")
+        return pd.DataFrame()
+
     keys = all_metrics[0].keys()
-    avg_metrics = {}
+    avg_metrics = {f"avg_{key}": sum(m[key] for m in all_metrics if key in m) / len(all_metrics) for key in keys}
 
-    for key in keys:
-        values = [m[key] for m in all_metrics if key in m]
-        avg_metrics[f"avg_{key}"] = sum(values) / len(values) if values else 0.0
+    df = pd.DataFrame([{
+        "Модель": model,
+        "Промпт": prompt,
+        **{k.replace("avg_", "").capitalize(): round(v, 3) for k, v in avg_metrics.items()}
+    }])
 
-    return avg_metrics
+    return df
 
 
 def resolve_reference(model_, prompt, texts):
-    # key = os.getenv("OPENAI_API_KEY")
-    key = "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"
+    key = os.getenv("OPENAI_API_KEY")
     client = OpenAI(api_key=key)
     print(models_map[model_])
     for t in tqdm(texts, desc="Обработка текстов"):
@@ -64,13 +75,23 @@ models_map = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
               '4o-mini-tuned-rucoco': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt',
               '4,1-mini': 'gpt-4.1-mini-2025-04-14',
               '4,1-mini-tuned-rucoco': 'ft:gpt-4.1-mini-2025-04-14:personal:rucoco-coref:BQ8Xu1hn',
-              '4,1': 'gpt-4.1-2025-04-14',}
-prompt_template = '3_new_ref_CoT'
+              '4,1': 'gpt-4.1-2025-04-14', }
+prompt_template = 'reference_zero_shot'
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
 m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-tuned-rucoco', '4,1-mini', '4,1-mini-tuned-rucoco', '4,1']
 # create_prompts(prompt_template, texts)
-model = m[6]
-# resolve_reference(model, prompt_template, texts)
+model = m[5]
+# resolve_reference(model, prompt_template, ['418701'])
+
+frames = []
 for model in m:
-    print(model, get_metrics_for_model(model, prompt_template, texts)['avg_f1'])
+    print(model)
+    # resolve_reference(model, prompt_template, texts)
+    df = get_metrics_for_model(model, prompt_template, texts)
+    if not df.empty:
+        frames.append(df)
+
+final_df = pd.concat(frames, ignore_index=True)
+final_df.to_csv(f"{prompt_template}.csv", index=False)
+print(final_df)

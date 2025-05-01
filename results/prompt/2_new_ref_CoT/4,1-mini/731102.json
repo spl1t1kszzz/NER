@@ -1,0 +1,3 @@
+{
+    "clusters": [  ["Atlassian Intelligence", "ИИ-помощник", "виртуального товарища по команде", "Он", "помощник", "помощнику", "ИИ"],  ["Atlassian", "компания Atlassian", "компании"],  ["OpenAI", "модели от OpenAI"],  ["Confluence", "рабочее пространство Confluence", "база знаний", "базе"],  ["Jira", "Jira Service Management", "Jira"],  ["GitHub", "инструмент Copilot", "ChatGPT"],  ["Amazon", "ИИ-помощник CodeWhisperer", "он"],  ["CodeWhisperer", "ИИ-помощник по кодированию CodeWhisperer"],  ["разработчики", "клиенты Amazon Web Services"],  ["JQL", "SQL"],  ["помощник"],  ["тарифы Premium и Enterprise для Jira"],  ["лист ожидания"]]
+}

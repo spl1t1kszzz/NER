@@ -1,0 +1,8 @@
+Модель,Промпт,Precision,Recall,F1
+4o,reference_one_shot,0.132,0.009,0.014
+4o-mini,reference_one_shot,0.157,0.004,0.007
+4o-mini-tuned,reference_one_shot,0.186,0.185,0.183
+4o-mini-tuned-rucoco,reference_one_shot,0.175,0.01,0.017
+"4,1-mini",reference_one_shot,0.08,0.015,0.021
+"4,1-mini-tuned-rucoco",reference_one_shot,0.11,0.035,0.049
+"4,1",reference_one_shot,0.042,0.029,0.032
