@@ -71,22 +71,23 @@ def resolve_reference(model_, prompt, texts):
 
 
 
-prompt_template = 'reference_zero_shot'
+prompt_templates = ['reference_CoT', 'new_reference_CoT', '2_new_ref_CoT', '3_new_ref_CoT', 'reference_CoT', 'reference_one_shot', 'reference_zero_shot']
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
 m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-tuned-rucoco', '4,1-mini', '4,1-mini-tuned-rucoco', '4,1']
 # create_prompts(prompt_template, texts)
-model = m[5]
-# resolve_reference(model, prompt_template, ['418701'])
+model = m[6]
+# resolve_reference(model, prompt_template, texts)
 
 frames = []
-for model in m:
-    print(model)
-    # resolve_reference(model, prompt_template, texts)
-    df = get_metrics_for_model(model, prompt_template, texts)
-    if not df.empty:
-        frames.append(df)
-
+for prompt in prompt_templates:
+    for model in m:
+        print(prompt, model)
+        # resolve_reference(model, prompt_template, texts)
+        df = get_metrics_for_model(model, prompt, texts)
+        if not df.empty:
+            frames.append(df)
+print(frames)
 final_df = pd.concat(frames, ignore_index=True)
-final_df.to_csv(f"{prompt_template}.csv", index=False)
+final_df.to_csv("results.csv", index=False)
 print(final_df)
