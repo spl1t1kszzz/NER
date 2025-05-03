@@ -1,0 +1,224 @@
+{
+    "examples": [
+      {
+        "text": "Пробуем запустить с датасетом по умолчанию - Alpaca. Успех. Обучение завершилось за 2.5 минуты. Видим, что создался некий .bin, размером 800мб.",
+        "terms": [
+          {
+            "index": 0,
+            "class": "Dataset",
+            "value": "Alpaca"
+          },
+          {
+            "index": 0,
+            "class": "Dataset",
+            "value": "датасетом"
+          }
+        ],
+        "relations": []
+      },
+      {
+        "text": "У ChatGPT — три версии ChatGPT существует в нескольких версиях: 3, 3.5 и с платным доступом версия 4, а также при работе через API можно выбирать различные типы моделей.",
+        "terms": [
+          {
+            "index": 0,
+            "class": "Dataset",
+            "value": "ChatGPT"
+          }
+        ],
+        "relations": []
+      },
+      {
+        "text": "Для разработчиков среднего и высокого уровня нейросети становятся полноценными помощниками. Есть возможность прокачать и оптимизировать процессы, то есть сильно повысить свою продуктивность. Например, у компании GitHub есть Copilot, у Amazon — CodeWhisperer. Это системы, которые поддерживают написание кода и облегчают работу программиста.",
+        "terms": [
+          {
+            "index": 0,
+            "class": "Model",
+            "value": "нейросети"
+          },
+          {
+            "index": 0,
+            "class": "Organization",
+            "value": "GitHub"
+          },
+          {
+            "index": 0,
+            "class": "Organization",
+            "value": "Amazon"
+          },
+          {
+            "index": 0,
+            "class": "Application",
+            "value": "Copilot"
+          },
+          {
+            "index": 0,
+            "class": "Application",
+            "value": "CodeWhisperer"
+          }
+        ],
+        "relations": [
+          {
+            "term1": {
+              "class": "Application",
+              "value": "Copilot",
+              "index": 0
+            },
+            "predicate": "hasAuthor",
+            "term2": {
+              "class": "Organization",
+              "value": "GitHub",
+              "index": 0
+            }
+          },
+          {
+            "term1": {
+              "class": "Application",
+              "value": "CodeWhisperer",
+              "index": 0
+            },
+            "predicate": "hasAuthor",
+            "term2": {
+              "class": "Organization",
+              "value": "Amazon",
+              "index": 0
+            }
+          }
+        ]
+      },
+      {
+        "text": "Всё что о ней известно, ограничивается одной статьёй, самого Ya:Яндекс выложил YaLM 100B — сейчас это крупнейшая GPT-подобная нейросеть в свободном доступе. LLama 2 (2023) (Context: 4096) - Самый сок, совсем недавно вышедшая модель, которая запустила множество процессов. Стали появляться десятки кастомных маленьких моделей.",
+        "terms": [
+          {
+            "index": 0,
+            "class": "Organization",
+            "value": "Ya"
+          },
+          {
+            "index": 0,
+            "class": "Organization",
+            "value": "Яндекс"
+          },
+          {
+            "index": 0,
+            "class": "Model",
+            "value": "YaLM"
+          },
+          {
+            "index": 0,
+            "class": "Date",
+            "value": "2023"
+          },
+          {
+            "index": 0,
+            "class": "Model",
+            "value": "LLama 2"
+          }
+        ],
+        "relations": [
+          {
+            "term1": {
+              "class": "Organization",
+              "value": "Ya",
+              "index": 0
+            },
+            "predicate": "isAlternativeNameFor",
+            "term2": {
+              "class": "Organization",
+              "value": "Яндекс",
+              "index": 0
+            }
+          },
+          {
+            "term1": {
+              "class": "Model",
+              "value": "YaLM",
+              "index": 0
+            },
+            "predicate": "hasAuthor",
+            "term2": {
+              "class": "Organization",
+              "value": "Яндекс",
+              "index": 0
+            }
+          },
+          {
+            "term1": {
+              "class": "Date",
+              "value": "2023",
+              "index": 0
+            },
+            "predicate": "isDateOf",
+            "term2": {
+              "class": "Model",
+              "value": "LLama 2",
+              "index": 0
+            }
+          }
+        ]
+      },
+      {
+        "text": "Что мы имеем из ванильных моделей: GPT-1 (2018) (Context: 512) - Работала не очень хорошо (длинные тексты генерировались плохо), но при файнтюнинге на отдельных задачах эта модель могла выполнять несложные задания. GPT-2 (2019) (Context: 1024) - стала лучше, научилась писать длинные связные тексты и даже решать задачи при помощи prompt engineering без обучения.",
+        "terms": [
+          {
+            "index": 0,
+            "class": "Model",
+            "value": "GPT-1"
+          },
+          {
+            "index": 0,
+            "class": "Date",
+            "value": "2018"
+          },
+          {
+            "index": 0,
+            "class": "Model",
+            "value": "GPT-2"
+          },
+          {
+            "index": 0,
+            "class": "Date",
+            "value": "2019"
+          },
+          {
+            "index": 0,
+            "class": "Method",
+            "value": "prompt engineering"
+          },
+          {
+            "index": 0,
+            "class": "Method",
+            "value": "файнтюнинге"
+          }
+        ],
+        "relations": [
+          {
+            "term1": {
+              "class": "Date",
+              "value": "2018",
+              "index": 0
+            },
+            "predicate": "isDateOf",
+            "term2": {
+              "class": "Model",
+              "value": "GPT-1",
+              "index": 0
+            }
+          },
+          {
+            "term1": {
+              "class": "Date",
+              "value": "2019",
+              "index": 0
+            },
+            "predicate": "isDateOf",
+            "term2": {
+              "class": "Model",
+              "value": "GPT-2",
+              "index": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+

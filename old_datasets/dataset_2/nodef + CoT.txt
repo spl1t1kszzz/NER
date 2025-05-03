@@ -1,4 +1,4 @@
- Специалисты B-Organization
+Специалисты B-Organization
 Data B-Science
 часто O
 применяют O
@@ -6,7 +6,8 @@ Data B-Science
 методы B-Method
 получения B-Method_ML
 датасетов B-Dataset
-. O Профессионалы B-Organization
+. O
+Профессионалы B-Organization
 в O
 области B-Science
 Data B-Dataset
@@ -19,7 +20,8 @@ Science I-Science
 созданию B-Task
 наборов B-Dataset
 данных I-Dataset
-. OЦель B-Task
+. O
+Цель B-Task
 этой B-Task
 статьи B-Task
 — O
@@ -32,7 +34,8 @@ Science I-Science
 использования B-Method
 языка B-Lang
 Python B-Lang
-. OЯ B-Task
+. O
+Я B-Task
 расскажу B-Task
 , O
 как B-Task

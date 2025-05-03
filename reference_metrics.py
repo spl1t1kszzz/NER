@@ -3,7 +3,7 @@ import os
 
 import pandas as pd
 from tqdm import tqdm
-from typing import List
+from models import models_map
 import LEA
 from openai import OpenAI
 
@@ -70,12 +70,7 @@ def resolve_reference(model_, prompt, texts):
                 json.dump(result, json_file, ensure_ascii=False, indent=4)
 
 
-models_map = {'4o': 'gpt-4o-2024-08-06', '4o-mini': 'gpt-4o-mini-2024-07-18',
-              '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9',
-              '4o-mini-tuned-rucoco': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt',
-              '4,1-mini': 'gpt-4.1-mini-2025-04-14',
-              '4,1-mini-tuned-rucoco': 'ft:gpt-4.1-mini-2025-04-14:personal:rucoco-coref:BQ8Xu1hn',
-              '4,1': 'gpt-4.1-2025-04-14', }
+
 prompt_template = 'reference_zero_shot'
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
