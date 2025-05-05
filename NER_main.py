@@ -54,7 +54,7 @@ def solve_ner_new_dataset(dataset_name: str, prompt_file_name: str, resp_file_na
 model = '4o'
 prompt = 'nodef + fp_corr'
 metrics_sum = {'Recall': 0.0, 'Precision' : 0.0, 'F1' : 0.0}
-datasets = ['articles_dataset', 'paragraph_dataset', 'new_dataset', 'new_dataset_2']
+datasets = ['paragraph_dataset', 'new_dataset', 'new_dataset_2']
 for dataset in datasets:
     # solve_ner_new_dataset(dataset, f'./prompts/term_classification/term_classification({prompt}).txt', f'./new_datasets/results/{prompt}/{model}/{dataset}.txt', model)
     m = NER_metrics.get_ner_metrics(False, 0, f'./new_datasets/{dataset}_BIO.txt',f'./new_datasets/results/{prompt}/{model}/{dataset}.txt')

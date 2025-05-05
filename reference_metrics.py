@@ -3,17 +3,19 @@ import os
 
 import pandas as pd
 from tqdm import tqdm
-from models import models_map
+from typing import List
 import LEA
 from openai import OpenAI
 
 
-def create_prompts(prompt, texts):
-    with open(f"./prompts/reference/{prompt}.txt", 'r', encoding='utf-8') as template:
+def create_prompts(reference: bool, prompt, texts):
+    prompt_template_file_name = f"./prompts/reference/{prompt}.txt" if reference else f"./prompts/term_classification/{prompt}.txt"
+    with open(prompt_template_file_name, 'r', encoding='utf-8') as template:
         prompt_text = template.read()
         for t in tqdm(texts, desc=f"Создание промптов {prompt}"):
             with open(f"./texts/{t}/text_{t}.json", 'r', encoding='utf-8') as text:
                 data = json.load(text)
+                # data = text.read()
                 a = prompt_text.replace('<ТВОЙ ТЕКСТ ЗДЕСЬ>', data['text'])
                 os.makedirs(f'./ready_prompts/{prompt}', exist_ok=True)
                 with open(f'./ready_prompts/{prompt}/{t}.txt', 'w', encoding='utf-8') as f1:
@@ -67,27 +69,37 @@ def resolve_reference(model_, prompt, texts):
             answer = response.choices[0].message.content.strip()
             result = {"clusters": answer}
             with open(f"./results/prompt/{prompt}/{model_}/{t}.json", 'w', encoding='utf-8') as json_file:
+                # json_file.write(answer)
                 json.dump(result, json_file, ensure_ascii=False, indent=4)
 
 
-
-prompt_templates = ['reference_CoT', 'new_reference_CoT', '2_new_ref_CoT', '3_new_ref_CoT', 'reference_CoT', 'reference_one_shot', 'reference_zero_shot']
+models_map = {
+    '4o-mini-tuned': 'ft:gpt-4o-mini-2024-07-18:personal:reftuning:BJaiuVY9',
+    '4o-mini-tuned-rucoco': 'ft:gpt-4o-mini-2024-07-18:personal:rucoco-fine-tuning:BPkqdkZt',
+    '4,1-mini': 'gpt-4.1-mini-2025-04-14',
+    '4,1-mini-tuned-rucoco': 'ft:gpt-4.1-mini-2025-04-14:personal:rucoco-coref:BQ8Xu1hn',
+    '4,1': 'gpt-4.1-2025-04-14',
+    '4,1-mini-tuned': 'ft:gpt-4.1-mini-2025-04-14:personal:ref-tuning:BTopNuPM'}
+prompt_template = 'reference_one_shot'
 texts = ['79830', '418701', '542718', '731102', '737018', '737046', '747330', '747488',
          '760298']
-m = ['4o', '4o-mini', '4o-mini-tuned', '4o-mini-tuned-rucoco', '4,1-mini', '4,1-mini-tuned-rucoco', '4,1']
-# create_prompts(prompt_template, texts)
-model = m[6]
+m = ['4o', '4,1', '4o-mini-tuned', '4,1-mini-tuned']
+# create_prompts(True, prompt_template, texts)
+model = m[0]
 # resolve_reference(model, prompt_template, texts)
+# df = get_metrics_for_model(model, prompt_template, texts)
+# print(df)
+# frames = []
+# for p in ['reference_one_shot', 'reference_zero_shot', '2_new_ref_CoT', '3_new_ref_CoT', '3_new_ref_CoT_updated', '3_new_ref_CoT_updated_BIO']:
+#     for model in m:
+#         print(model)
+#         # resolve_reference(model, prompt_template, texts)
+#         df = get_metrics_for_model(model, p, texts)
+#         if not df.empty:
+#             frames.append(df)
+#
+# final_df = pd.concat(frames, ignore_index=True)
+# final_df.to_csv(f"res.csv", index=False)
+# print(final_df)
 
-frames = []
-for prompt in prompt_templates:
-    for model in m:
-        print(prompt, model)
-        # resolve_reference(model, prompt_template, texts)
-        df = get_metrics_for_model(model, prompt, texts)
-        if not df.empty:
-            frames.append(df)
-print(frames)
-final_df = pd.concat(frames, ignore_index=True)
-final_df.to_csv("results.csv", index=False)
-print(final_df)
+
